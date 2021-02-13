@@ -1,0 +1,37 @@
+[
+   {
+      "auctionID": 0,
+      "lotNumber": 0,
+      "dateEnding": "",
+      "seller": "",
+      "location": "",
+      "notes": [
+         "",
+         ""
+      ],
+      "images": [
+         "",
+         ""
+      ],
+      "condition": {
+         "status": "stationary",
+         "primaryDamage": "",
+         "secondaryDamage": "",
+         "estimatedRetailValue": 0,
+         "estimatedRepairCost": 0,
+         "keys": ""
+      },
+      "vehicleInfo": {
+         "make": "",
+         "model": "",
+         "year": 0,
+         "vin": "",
+         "engine": "",
+         "transmission": "",
+         "wheelsDriven": "",
+         "bodyColor": "",
+         "interiorColor": "",
+         "fuel": ""
+      }
+   }
+]
