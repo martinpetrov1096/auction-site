@@ -1,6 +1,6 @@
 [
    {
-      "auctionID": 0,
+      "id": 0,
       "lotNumber": 0,
       "dateEnding": "",
       "seller": "",
@@ -22,9 +22,149 @@
          "keys": ""
       },
       "vehicleInfo": {
-         "make": "",
-         "model": "",
-         "year": 0,
+         "make": "tesla",
+         "model": "model-s",
+         "year": 2018,
+         "vin": "",
+         "engine": "",
+         "transmission": "",
+         "wheelsDriven": "",
+         "bodyColor": "",
+         "interiorColor": "",
+         "fuel": ""
+      }
+   },
+   {
+      "id": 1,
+      "lotNumber": 1,
+      "dateEnding": "",
+      "seller": "",
+      "location": "",
+      "notes": [
+         "",
+         ""
+      ],
+      "images": [
+         "",
+         ""
+      ],
+      "condition": {
+         "status": "stationary",
+         "primaryDamage": "",
+         "secondaryDamage": "",
+         "estimatedRetailValue": 0,
+         "estimatedRepairCost": 0,
+         "keys": ""
+      },
+      "vehicleInfo": {
+         "make": "tesla",
+         "model": "model-3",
+         "year": 2020,
+         "vin": "",
+         "engine": "",
+         "transmission": "",
+         "wheelsDriven": "",
+         "bodyColor": "",
+         "interiorColor": "",
+         "fuel": ""
+      }
+   },
+   {
+      "id": 2,
+      "lotNumber": 2,
+      "dateEnding": "",
+      "seller": "",
+      "location": "",
+      "notes": [
+         "",
+         ""
+      ],
+      "images": [
+         "",
+         ""
+      ],
+      "condition": {
+         "status": "stationary",
+         "primaryDamage": "",
+         "secondaryDamage": "",
+         "estimatedRetailValue": 0,
+         "estimatedRepairCost": 0,
+         "keys": ""
+      },
+      "vehicleInfo": {
+         "make": "ford",
+         "model": "focus",
+         "year": 2016,
+         "vin": "",
+         "engine": "",
+         "transmission": "",
+         "wheelsDriven": "",
+         "bodyColor": "",
+         "interiorColor": "",
+         "fuel": ""
+      }
+   },
+   {
+      "id": 3,
+      "lotNumber": 3,
+      "dateEnding": "",
+      "seller": "",
+      "location": "",
+      "notes": [
+         "",
+         ""
+      ],
+      "images": [
+         "",
+         ""
+      ],
+      "condition": {
+         "status": "stationary",
+         "primaryDamage": "",
+         "secondaryDamage": "",
+         "estimatedRetailValue": 0,
+         "estimatedRepairCost": 0,
+         "keys": ""
+      },
+      "vehicleInfo": {
+         "make": "ford",
+         "model": "fiesta",
+         "year": 2013,
+         "vin": "",
+         "engine": "",
+         "transmission": "",
+         "wheelsDriven": "",
+         "bodyColor": "",
+         "interiorColor": "",
+         "fuel": ""
+      }
+   },
+   {
+      "id": 4,
+      "lotNumber": 4,
+      "dateEnding": "",
+      "seller": "",
+      "location": "",
+      "notes": [
+         "",
+         ""
+      ],
+      "images": [
+         "",
+         ""
+      ],
+      "condition": {
+         "status": "stationary",
+         "primaryDamage": "",
+         "secondaryDamage": "",
+         "estimatedRetailValue": 0,
+         "estimatedRepairCost": 0,
+         "keys": ""
+      },
+      "vehicleInfo": {
+         "make": "ford",
+         "model": "fiesta",
+         "year": 2013,
          "vin": "",
          "engine": "",
          "transmission": "",
