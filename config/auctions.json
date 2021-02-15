@@ -1,6 +1,7 @@
 [
    {
       "id": 0,
+      "auctioneer": "",
       "lotNumber": 0,
       "dateEnding": "",
       "seller": "",
@@ -11,7 +12,7 @@
       ],
       "images": [
          "https://smartcdn.prod.postmedia.digital/driving/wp-content/uploads/2019/04/model-s-001.jpg?quality=100&strip=all",
-         ""
+         "https://www.tesla.com/assets/img/ms_tw_s.jpg"
       ],
       "condition": {
          "status": "stationary",
@@ -26,6 +27,7 @@
          "model": "model-s",
          "year": 2018,
          "vin": "",
+         "mileage": "",
          "engine": "",
          "transmission": "",
          "wheelsDriven": "",
@@ -36,6 +38,7 @@
    },
    {
       "id": 1,
+      "auctioneer": "",
       "lotNumber": 1,
       "dateEnding": "",
       "seller": "",
@@ -61,6 +64,7 @@
          "model": "model-3",
          "year": 2020,
          "vin": "",
+         "mileage": "",
          "engine": "",
          "transmission": "",
          "wheelsDriven": "",
@@ -71,6 +75,7 @@
    },
    {
       "id": 2,
+      "auctioneer": "",
       "lotNumber": 2,
       "dateEnding": "",
       "seller": "",
@@ -96,6 +101,7 @@
          "model": "focus",
          "year": 2016,
          "vin": "",
+         "mileage": "",
          "engine": "",
          "transmission": "",
          "wheelsDriven": "",
@@ -106,6 +112,7 @@
    },
    {
       "id": 3,
+      "auctioneer": "",
       "lotNumber": 3,
       "dateEnding": "",
       "seller": "",
@@ -131,6 +138,7 @@
          "model": "fiesta",
          "year": 2013,
          "vin": "",
+         "mileage": "",
          "engine": "",
          "transmission": "",
          "wheelsDriven": "",
@@ -141,6 +149,7 @@
    },
    {
       "id": 4,
+      "auctioneer": "",
       "lotNumber": 4,
       "dateEnding": "",
       "seller": "",
@@ -166,6 +175,7 @@
          "model": "fiesta",
          "year": 2013,
          "vin": "",
+         "mileage": "",
          "engine": "",
          "transmission": "",
          "wheelsDriven": "",

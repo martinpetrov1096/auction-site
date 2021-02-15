@@ -1,7 +1,8 @@
+import Head from 'next/head';
 import auctions from '../../../config/auctions.json';
 import PropTypes from 'prop-types';
 import { auctionProp } from '../../../utils/prop-types';
-
+import AuctionList from '../../../components/auction-list';
 
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
@@ -9,7 +10,11 @@ import { auctionProp } from '../../../utils/prop-types';
 export default function Model({ auctions }) {
 
    return (
-      <h1>{auctions.length}</h1>
+      <>
+         <Head>
+         </Head>
+         <AuctionList auctions={auctions}/>
+      </>
    );
 
 }

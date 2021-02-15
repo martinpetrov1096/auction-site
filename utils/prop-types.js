@@ -14,6 +14,7 @@ export const vehicleInfoProp = shape({
    model: string.isRequired,
    year: number.isRequired,
    vin: string,
+   mileage: string,
    engine: string,
    transmission: string,
    wheelsDriven: string,
@@ -24,6 +25,7 @@ export const vehicleInfoProp = shape({
 
 export const auctionProp = shape({
    id: number.isRequired,
+   auctioneer: string.isRequired,
    lotNumber: number.isRequired,
    dateEnding: string.isRequired,
    seller: string.isRequired,

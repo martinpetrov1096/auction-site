@@ -1,7 +1,8 @@
+import Head from 'next/head';
 import auctions from '../../config/auctions.json';
 import PropTypes from 'prop-types';
 import { auctionProp } from '../../utils/prop-types';
-
+import AuctionList from '../../components/auction-list';
 
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
@@ -9,16 +10,11 @@ import { auctionProp } from '../../utils/prop-types';
 
 export default function Make({ auctions }) {
 
-   const auctionElements = auctions.map((auction) => {
-      return (
-         <div key={auction.auctionId}>
-            <h3>{auction.vehicleInfo.make + ' ' +  auction.vehicleInfo.model} </h3>
-         </div>
-      );
-   });
    return (
       <>
-         {auctionElements}
+         <Head>
+         </Head>
+         <AuctionList auctions={auctions}/>
       </>
    );
 }

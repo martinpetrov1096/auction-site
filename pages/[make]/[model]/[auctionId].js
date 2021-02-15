@@ -1,6 +1,6 @@
 import auctions from '../../../config/auctions.json';
 import { auctionProp } from '../../../utils/prop-types';
-
+import LargeDetails from '../../../components/auction-details/large';
 
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
@@ -8,11 +8,7 @@ import { auctionProp } from '../../../utils/prop-types';
 export default function Auction({ auction }) {
 
    return (
-      <div>
-         <h1>AuctionID: {auction.id}</h1>
-         <h2>Make: {auction.vehicleInfo.make}</h2>
-         <h2>Model: {auction.vehicleInfo.model}</h2>
-      </div>
+      <LargeDetails auction={auction}/>
    );
 }
 ////////////////////////////////////////////////////

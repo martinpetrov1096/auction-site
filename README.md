@@ -6,3 +6,4 @@
   - whatever
 - What information exactly is needed
   - json
+- Will all auctions have already ended?

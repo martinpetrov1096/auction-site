@@ -1,8 +1,12 @@
 import { Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap';
 import siteInfo from '../config/site-info.json';
 
-export default function NavigationBar() {
 
+////////////////////////////////////////////////////
+//////////////////// COMPONENT /////////////////////
+////////////////////////////////////////////////////
+
+export default function NavigationBar() {
 
    return (
       <Navbar bg="light" expand="lg" fixed="top">
@@ -15,7 +19,7 @@ export default function NavigationBar() {
               
             </Nav>
             <Form inline>
-               <FormControl type="text" placeholder="Search Lot or VIN" className="mr-sm-2" />
+               <FormControl type="text" placeholder="Search Lot # or VIN" className="mr-sm-2" />
                <Button variant="outline-success">Search</Button>
             </Form>
          </Navbar.Collapse>
