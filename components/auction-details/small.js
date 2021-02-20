@@ -16,15 +16,18 @@ export default function AuctionDetailsSmall({ auction }) {
 
    return (
       <div className={styles.wrapper}>
-         <img src={auction.images[0]} className={styles.img}/>
+         <div className={styles.imgWrapper}>
+            <img src={auction.images[0]} className={styles.img}/>
+         </div>
          <div className={styles.details}>
+            <h5 className={styles.title}>{auction.vehicleInfo.make + ' ' + auction.vehicleInfo.model}</h5>
             <ul className={styles.infoList}>
-               <li>{auction.vehicleInfo.make + ' ' + auction.vehicleInfo.model}</li>
-               <li>Auction: {auction.auctioneer}</li>
-               <li>Lot Number: {auction.lotNumber}</li>
-               <li>Condition: {auction.condition.status}</li>
-               <li>Damage: {auction.condition.primaryDamage}</li>
-               <li>Mileage: {auction.vehicleInfo.mileage}</li>
+               <li>Auction: {auction.auctioneer || 'N/A'}</li>
+               <li>Lot Number: {auction.lotNumber || 'N/A'}</li>
+               <li>VIN: {auction.vehicleInfo.vin || 'N/A'}</li>
+               <li>Condition: {auction.condition.status || 'N/A'}</li>
+               <li>Damage: {auction.condition.primaryDamage || 'N/A'}</li>
+               <li>Mileage: {auction.vehicleInfo.mileage || 'N/A'}</li>
             </ul>
             <a href={link} className={styles.detailsBtn}>More Details</a>
          </div>

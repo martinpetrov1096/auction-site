@@ -1,7 +1,7 @@
 import { arrayOf } from 'prop-types';
 import { auctionProp } from '../utils/prop-types';
 import AuctionDetailsSmall from './auction-details/small';
-
+import styles from '../styles/auction-list.module.css';
 
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
@@ -14,7 +14,7 @@ export default function AuctionList({ auctions }) {
    });
 
    return (
-      <main>
+      <main className={styles.wrapper}>
          {auctionElements}
       </main>
    );

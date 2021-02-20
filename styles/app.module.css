@@ -1,20 +1,16 @@
-
 .wrapper {
-   margin-top: 80px;
+   padding-top: 80px;
+   min-height: calc(100vh - 80px);
+   width: 100%;
    display: flex;
    flex-flow: column nowrap;
-   justify-content: center;
+   justify-content: flex-start;
    align-items: center;
    background-color: var(--whiteSpaceColor);
 }
-
-
-
 .contentWrapper {
-
    width: 100%;
    max-width: 1300px;
-   background-color: var(--bgColor);
    display: flex;
    flex-flow: column nowrap;
    justify-content: center;

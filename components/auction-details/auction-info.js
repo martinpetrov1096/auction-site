@@ -1,4 +1,5 @@
 import { auctionProp } from '../../utils/prop-types';
+import styles from '../../styles/components/auction-details/info.module.css';
 
 
 ////////////////////////////////////////////////////
@@ -8,19 +9,18 @@ import { auctionProp } from '../../utils/prop-types';
 export default function AuctionInfo({ auctionInfo }) {
 
    return (
-      <>
-         <h3>Auction Information</h3>
-         <ul>
-            <li>ID: {auctionInfo.id}</li>
-            <li>Auctioneer: {auctionInfo.auctioneer}</li>
-            <li>Lot Number: {auctionInfo.lotNumber}</li>
-            <li>Date Ending: {auctionInfo.dateEnding}</li>
-            <li>Seller: {auctionInfo.seller}</li>
-            <li>Location: {auctionInfo.location}</li>
+      <div className={styles.wrapper}>
+         <h5 className={styles.title}>Auction Information</h5>
+         <ul className={styles.infoList}>
+            <li>ID: {auctionInfo.id || 'N/A'}</li>
+            <li>Auctioneer: {auctionInfo.auctioneer || 'N/A'}</li>
+            <li>Lot Number: {auctionInfo.lotNumber || 'N/A'}</li>
+            <li>Date Of Sale: {auctionInfo.dateEnding || 'N/A'}</li>
+            <li>Seller: {auctionInfo.seller || 'N/A'}</li>
+            <li>Location: {auctionInfo.location || 'N/A'}</li>
          </ul>
-      </>
+      </div>
    );
-
 }
 ////////////////////////////////////////////////////
 /////////////// COMPONENT PROP TYPES ///////////////

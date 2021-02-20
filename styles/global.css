@@ -5,22 +5,31 @@
    --whiteSpaceColor: #F1F1F1;
    --primaryColor: #00838f;
    --accentColor: #795548;
+   --accentColorLight: #a98274;
    --textColor: #FFFFFF;
    --boxShadowSmall: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
    --boxShadowLarge: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+   --transition: all .2s ease-in-out;
    font-family: 'Open Sans', sans-serif;
 }
-
+/* To make sure there are no tiny margins */
+html, body {
+   margin: 0;
+   padding: 0;
+}
 button {
    border: none;
    margin: 10px;
    border-radius: 5px;
-   padding: 8px;
+   padding: 10px;
    box-shadow: var(--boxShadowSmall);
    background-color: var(--accentColor);
    color: var(--textColor);
+   transition: var(--transition);
 }
-
+button:hover {
+   background-color: var(--accentColorLight);
+}
 input {
    background-color: inherit;
    box-shadow: none;
@@ -32,4 +41,23 @@ input {
 }
 input::placeholder {
    color: var(--textColor) !important;
+}
+h1 {
+   font-size: 36px;
+}
+
+h2 {
+   font-size: 32px;
+}
+h3 {
+   font-size: 28px
+}
+h4 {
+   font-size: 24px;
+}
+h5 {
+   font-size: 20px;
+}
+h6 {
+   font-size: 16px;
 }

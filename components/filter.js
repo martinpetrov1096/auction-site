@@ -26,7 +26,6 @@ export default function filter() {
    }, [auctions]);
 
    const modelElements = useMemo(() => {
-
       const models = auctions.reduce((curModels, auction) => {
          if (auction.vehicleInfo.make != curMake) {
             return curModels;
@@ -45,7 +44,6 @@ export default function filter() {
 
 
    const filter = useCallback(() => {
-      // router.push(filterLink);
       if (!curMake) {
          return;
       }
@@ -58,8 +56,8 @@ export default function filter() {
 
 
    return (
-      <div className={styles.wrapper}>
-         <form>
+      <>
+         <form className={styles.wrapper}> 
             <select name="Make" id="make" value={curMake} onChange={() => setCurMake(event.target.value)} className={styles.select}>
                <option>make</option>
                {makeElements}
@@ -68,8 +66,9 @@ export default function filter() {
                <option>model</option>
                {modelElements}
             </select>
+            <button variant="primary"  onClick={(e) => {e.preventDefault(); filter();}}>Filter</button>
          </form>
-         <button variant="primary" type="submit" onClick={() => filter()}>Filter</button>
-      </div>
+
+      </>
    );
 }

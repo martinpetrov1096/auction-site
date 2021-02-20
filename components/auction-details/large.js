@@ -2,6 +2,8 @@
 import { auctionProp } from '../../utils/prop-types';
 import VehicleInfo from './vehicle-info';
 import AuctionInfo from './auction-info';
+import ConditionInfo from './condition-info';
+import ImageGallery from './image-gallery';
 import styles from '../../styles/components/auction-details/large.module.css';
 
 
@@ -28,21 +30,14 @@ export default function AuctionDetailsLarge({ auction }) {
    return (
 
       <div className={styles.wrapper}>
-         <h2 className="text-center">{auction.vehicleInfo.make + ' ' + auction.vehicleInfo.model}</h2>
-         <img src={auction.images[0]} className={styles.img}/>
+         <h1 className={styles.title}>{auction.vehicleInfo.make + ' ' + auction.vehicleInfo.model}</h1>
+         {/* <img src={auction.images[0]} className={styles.img}/> */}
+         <ImageGallery images={auction.images}/>
          <div className={styles.details}>
-            <ul className="">
-               <li></li>
-               <li>Auction: {auction.auctioneer}</li>
-               <li>Lot Number: {auction.lotNumber}</li>
-               <li>Date of Sale: {auction.dateEnding}</li>
-               <li>Lot Number: {auction.lotNumber}</li>
-               <li>Condition: {auction.condition.status}</li>
-               <li>Damage: {auction.condition.primaryDamage}</li>
-               <li>Mileage: {auction.vehicleInfo.mileage}</li>
-            </ul>
-            <VehicleInfo vehicleInfo={auction.vehicleInfo}/>
             <AuctionInfo auctionInfo={auction}/>
+            <VehicleInfo vehicleInfo={auction.vehicleInfo}/>
+            <ConditionInfo conditionInfo={auction.condition}/>
+
          </div>
 
        

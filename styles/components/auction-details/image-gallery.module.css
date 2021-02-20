@@ -1,0 +1,42 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+.wrapper {
+   flex: 0 1 65%;
+
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: space-between;
+}
+.curImageWrapper {
+   position: relative;
+   height: 600px;
+
+   background-color: var(--whiteSpaceColor);
+   display: flex;
+   flex-flow: row nowrap;
+}
+
+.prevBtn, .nextBtn {
+   position: absolute;
+   top: 50%;
+}
+.prevBtn {
+   left: 0;
+}
+.nextBtn {
+   right: 0;
+}
+.curImage {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+.thumbnailWrapper {
+   display: flex;
+   flex-flow: row wrap;
+}
+.thumbnail {
+   width: 75px;
+   height: 75px;
+   object-fit: cover;
+}
