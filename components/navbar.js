@@ -1,6 +1,5 @@
-import { Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap';
 import siteInfo from '../config/site-info.json';
-
+import styles from '../styles/components/navbar.module.css';
 
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
@@ -9,20 +8,18 @@ import siteInfo from '../config/site-info.json';
 export default function NavigationBar() {
 
    return (
-      <Navbar bg="light" expand="lg" fixed="top">
-         <Navbar.Brand href="/">{siteInfo.name}</Navbar.Brand>
-         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-         <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-               <Nav.Link href="/">Home</Nav.Link>
-               <Nav.Link href="/about">About</Nav.Link>
-              
-            </Nav>
-            <Form inline>
-               <FormControl type="text" placeholder="Search Lot # or VIN" className="mr-sm-2" />
-               <Button variant="outline-success">Search</Button>
-            </Form>
-         </Navbar.Collapse>
-      </Navbar>
+      <nav className={styles.wrapper}>
+         <div className={styles.links}>
+            <a href="/" className={styles.title}>{siteInfo.name}</a>
+            <a href="/">Home</a>
+            <a href="/about">About</a>     
+         </div>
+         <div className={styles.search}>
+            <form>
+               <input type="text" placeholder="Search Lot # or VIN" ></input>
+               <button variant="outline-success">Search</button>
+            </form>
+         </div>
+      </nav>
    );
 }

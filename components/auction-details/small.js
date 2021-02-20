@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { auctionProp } from '../../utils/prop-types';
-import { Card, Button, Container, Row, Col, Image, ListGroup } from 'react-bootstrap';
+import styles from '../../styles/components/auction-details/small.module.css';
 
 
 ////////////////////////////////////////////////////
@@ -8,35 +8,27 @@ import { Card, Button, Container, Row, Col, Image, ListGroup } from 'react-boots
 ////////////////////////////////////////////////////
 
 export default function AuctionDetailsSmall({ auction }) {
-
    const link = useMemo(() => {
       return '/' + auction.vehicleInfo.make + '/'
-           + auction.vehicleInfo.model + '/'
-           + auction.id; 
+         + auction.vehicleInfo.model + '/'
+         + auction.id; 
    });
 
    return (
-      <Card className="p-3 m-5 text-capitalize">
-         <Container >
-            <Row>
-               <Col sm={12} md={6} lg={6}>
-                  <Image src={auction.images[0]} thumbnail/>
-                  <Button href={link}>More Details</Button>
-               </Col>
-               <Col>
-                  <ListGroup>
-                     <ListGroup.Item>{auction.vehicleInfo.make + ' ' + auction.vehicleInfo.model}</ListGroup.Item>
-                     <ListGroup.Item>Auction: {auction.auctioneer}</ListGroup.Item>
-                     <ListGroup.Item>Lot Number: {auction.lotNumber}</ListGroup.Item>
-                     <ListGroup.Item>Condition: {auction.condition.status}</ListGroup.Item>
-                     <ListGroup.Item>Damage: {auction.condition.primaryDamage}</ListGroup.Item>
-                     <ListGroup.Item>Mileage: {auction.vehicleInfo.mileage}</ListGroup.Item>
-                  </ListGroup>
-               </Col>
-            </Row>
-         </Container>
-      </Card>
-
+      <div className={styles.wrapper}>
+         <img src={auction.images[0]} className={styles.img}/>
+         <div className={styles.details}>
+            <ul className={styles.infoList}>
+               <li>{auction.vehicleInfo.make + ' ' + auction.vehicleInfo.model}</li>
+               <li>Auction: {auction.auctioneer}</li>
+               <li>Lot Number: {auction.lotNumber}</li>
+               <li>Condition: {auction.condition.status}</li>
+               <li>Damage: {auction.condition.primaryDamage}</li>
+               <li>Mileage: {auction.vehicleInfo.mileage}</li>
+            </ul>
+            <a href={link} className={styles.detailsBtn}>More Details</a>
+         </div>
+      </div>
    );
 }
 ////////////////////////////////////////////////////

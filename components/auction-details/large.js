@@ -1,55 +1,52 @@
-import { useMemo } from 'react';
-import { Card, Carousel, Container, Row, Col, ListGroup } from 'react-bootstrap';
+
 import { auctionProp } from '../../utils/prop-types';
 import VehicleInfo from './vehicle-info';
+import AuctionInfo from './auction-info';
+import styles from '../../styles/components/auction-details/large.module.css';
+
+
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
 ////////////////////////////////////////////////////
 
 export default function AuctionDetailsLarge({ auction }) {
 
-   const imageElements = useMemo(() => {
+   // const imageElements = useMemo(() => {
 
-      return auction.images.map((img) => {
-         return (
-            <Carousel.Item key={img}>
-               <img src={img} alt="Vehicle Pictures" className="w-100" style={{overflow: 'hidden'}}>
-               </img>
-            </Carousel.Item>
-         );
-      });
+   //    return auction.images.map((img) => {
+   //       return (
+   //          <Carousel.Item key={img}>
+   //             <img src={img} alt="Vehicle Pictures" className="w-100" style={{overflow: 'hidden'}}>
+   //             </img>
+   //          </Carousel.Item>
+   //       );
+   //    });
 
-   });
+   // });
 
 
    return (
 
-      <Container fluid className="p-3 m-5 w-100 text-capitalize">
+      <div className={styles.wrapper}>
          <h2 className="text-center">{auction.vehicleInfo.make + ' ' + auction.vehicleInfo.model}</h2>
-         <Row>
-            <Carousel className="w-100" style={{height: '600px'}}>
-               {imageElements}
-            </Carousel>
-         </Row>
-         <Row>
-            <Col>
-               <ListGroup>
-                  <ListGroup.Item ></ListGroup.Item>
-                  <ListGroup.Item>Auction: {auction.auctioneer}</ListGroup.Item>
-                  <ListGroup.Item>Lot Number: {auction.lotNumber}</ListGroup.Item>
-                  <ListGroup.Item>Date of Sale: {auction.dateEnding}</ListGroup.Item>
-                  <ListGroup.Item>Lot Number: {auction.lotNumber}</ListGroup.Item>
-                  <ListGroup.Item>Condition: {auction.condition.status}</ListGroup.Item>
-                  <ListGroup.Item>Damage: {auction.condition.primaryDamage}</ListGroup.Item>
-                  <ListGroup.Item>Mileage: {auction.vehicleInfo.mileage}</ListGroup.Item>
-               </ListGroup>
+         <img src={auction.images[0]} className={styles.img}/>
+         <div className={styles.details}>
+            <ul className="">
+               <li></li>
+               <li>Auction: {auction.auctioneer}</li>
+               <li>Lot Number: {auction.lotNumber}</li>
+               <li>Date of Sale: {auction.dateEnding}</li>
+               <li>Lot Number: {auction.lotNumber}</li>
+               <li>Condition: {auction.condition.status}</li>
+               <li>Damage: {auction.condition.primaryDamage}</li>
+               <li>Mileage: {auction.vehicleInfo.mileage}</li>
+            </ul>
+            <VehicleInfo vehicleInfo={auction.vehicleInfo}/>
+            <AuctionInfo auctionInfo={auction}/>
+         </div>
 
-            </Col>
-            <Col>
-               <VehicleInfo vehicleInfo={auction.vehicleInfo}/>
-            </Col>
-         </Row>
-      </Container>
+       
+      </div>
 
    );
 

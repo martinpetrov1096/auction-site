@@ -1,7 +1,8 @@
-import { useMemo, useState } from 'react';
-import { Container, Button, Form, Col } from 'react-bootstrap';
-
+import { useCallback, useMemo, useState } from 'react';
+import { useRouter } from 'next/router';
 import auctions from '../config/auctions.json';
+
+import styles from '../styles/components/filter.module.css';
 
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
@@ -10,6 +11,7 @@ import auctions from '../config/auctions.json';
 export default function filter() {
    const [curMake, setCurMake] = useState();
    const [curModel, setCurModel] = useState();
+   const router = useRouter();
 
    const makeElements = useMemo(() => {
       const makes = auctions.map((a) => {
@@ -42,39 +44,32 @@ export default function filter() {
    }, [auctions, curMake]);
 
 
-
-   const filterLink = useMemo(() => {
+   const filter = useCallback(() => {
+      // router.push(filterLink);
       if (!curMake) {
-         return '';
+         return;
       }
       if (!curModel) {
-         return ('/' + curMake);
+         router.push('/' + curMake);
+         return;
       }
-      return ('/' + curMake + '/' + curModel);
-
+      router.push('/' + curMake + '/' + curModel);
    }, [curMake, curModel]);
 
+
    return (
-      <Container fluid className="mt-5 text-capitalize">
-         <Form.Row>
-            <Col>
-               <Form.Control as="select" defaultValue="Make" value={curMake} onChange={() => setCurMake(event.target.value)}>
-                  <option>Make</option>
-                  {makeElements}
-               </Form.Control>
-            </Col>
-            <Col>
-               <Form.Control as="select" defaultValue="Model" value={curModel} onChange={() => setCurModel(event.target.value)}>
-                  <option>Model</option>
-                  {modelElements}
-               </Form.Control>
-            </Col>
-
-
-    
-
-            <Button variant="primary" type="submit" href={filterLink}>Filter</Button>
-         </Form.Row>
-      </Container>
+      <div className={styles.wrapper}>
+         <form>
+            <select name="Make" id="make" value={curMake} onChange={() => setCurMake(event.target.value)} className={styles.select}>
+               <option>make</option>
+               {makeElements}
+            </select>
+            <select name="Model" id="model" value={curModel} onChange={() => setCurModel(event.target.value)} className={styles.select}>
+               <option>model</option>
+               {modelElements}
+            </select>
+         </form>
+         <button variant="primary" type="submit" onClick={() => filter()}>Filter</button>
+      </div>
    );
 }

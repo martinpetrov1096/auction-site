@@ -1,0 +1,38 @@
+
+.wrapper {
+   z-index: 100;
+   position: fixed;
+   top: 0;
+   padding: 10px min(5%, 20px);
+
+   width: 100%;
+   box-shadow: var(--boxShadowLarge);
+   background-color: var(--primaryColor);
+
+
+   display: flex;
+   flex-flow: row wrap;
+   align-items: center;
+   justify-content: space-between;
+
+}
+.links {
+   font-size: 24px;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+}
+.links > a {
+   color: var(--textColor) !important;
+   padding-right: 10px;
+}
+
+
+.title {
+   font-size: 24px;
+   margin-right: 20px;
+}
+
+.search {
+
+}

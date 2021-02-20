@@ -1,25 +1,21 @@
 import PropTypes from 'prop-types';
 import Navbar from '../components/navbar';
-import { Container, Row } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Filter from '../components/filter';
-
+import '../styles/global.css';
+import styles from '../styles/app.module.css';
 
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
 ////////////////////////////////////////////////////
 export default function MyApp({ Component, pageProps }) {
    return (
-      <div>
+      <div className={styles.wrapper}>
          <Navbar/>
-         <Container fluid="md" className="mt-5 pt-5">
-            <Row>
-               <Filter/>
-            </Row>
-            <Row>
-               <Component {...pageProps} />
-            </Row>
-         </Container>
+         <Filter/>
+         <div className={styles.contentWrapper}>
+
+            <Component {...pageProps} />
+         </div>
       </div>
    );
 }
