@@ -6,6 +6,8 @@ import styles from '../../styles/components/auction-details/image-gallery.module
 //////////////////// COMPONENT /////////////////////
 ////////////////////////////////////////////////////
 
+
+
 export default function ImageGallery({ images }) {
 
    const [curImageIdx, setCurImageIdx] = useState(0);
@@ -26,9 +28,9 @@ export default function ImageGallery({ images }) {
    return(
       <div className={styles.wrapper}>
          <div className={styles.curImageWrapper}>
-            <button onClick={() => setCurImageIdx((curImageIdx-1) % images.length)} className={styles.prevBtn}> </button>
+            <button onClick={() => setCurImageIdx(modulo((curImageIdx-1), images.length))} className={styles.prevBtn}> </button>
             <img src={images[curImageIdx]} className={styles.curImage}/>
-            <button onClick={() => setCurImageIdx((curImageIdx+1) % images.length)} className={styles.nextBtn}> </button>
+            <button onClick={() => setCurImageIdx(modulo((curImageIdx-1), images.length))} className={styles.nextBtn}> </button>
          </div>
          <div className={styles.thumbnailWrapper}>
             {thumbnails}
@@ -44,3 +46,8 @@ export default function ImageGallery({ images }) {
 ImageGallery.propTypes = {
    images: arrayOf(string)
 };
+
+
+function modulo(a, n) {
+   return ((a % n ) + n ) % n;
+}
