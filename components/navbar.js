@@ -10,7 +10,8 @@ export default function NavigationBar() {
       <nav className={styles.wrapper}>
          <div className={styles.links}>
             <a href="/" className={styles.title}>Home</a>
-            <a href="/about">About</a>     
+            <a href="/contact">Contact</a>   
+            <a href="/about">About</a>  
          </div>
          <div className={styles.search}>
             <form action="/search">

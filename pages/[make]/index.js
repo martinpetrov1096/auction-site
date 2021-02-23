@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import auctions from '../../config/auctions.json';
 import PropTypes from 'prop-types';
+import Filter from '../../components/filter';
 import { auctionProp } from '../../utils/prop-types';
 import AuctionList from '../../components/auction-list';
 
@@ -14,6 +15,7 @@ export default function Make({ auctions }) {
       <>
          <Head>
          </Head>
+         <Filter/>
          <AuctionList auctions={auctions}/>
       </>
    );

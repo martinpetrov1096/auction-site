@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import auctions from '../config/auctions.json';
 import AuctionList from '../components/auction-list';
+import Filter from '../components/filter';
 
 
 ////////////////////////////////////////////////////
@@ -15,6 +16,7 @@ export default function Home() {
       <>
          <Head>
          </Head>
+         <Filter/>
          <AuctionList auctions={auctions}/>
       </>
    );

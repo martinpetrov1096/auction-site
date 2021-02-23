@@ -9,17 +9,15 @@ import styles from '../styles/components/filter.module.css';
 ////////////////////////////////////////////////////
 
 export default function filter() {
+   const router = useRouter();
    const [curMake, setCurMake] = useState();
    const [curModel, setCurModel] = useState();
-   const router = useRouter();
 
    useEffect(() => {
       const { make, model } = router.query;
-      console.log(make + ' ' + model);
       setCurMake(make);
       setCurModel(model);
    }, []);
-
 
    const makeElements = useMemo(() => {
       const makes = auctions.map((a) => {
@@ -29,7 +27,7 @@ export default function filter() {
          return makes.indexOf(make) === index;
       });
       return uniqueMakes.map((m) => {
-         return <option key={m} className="text-capitalize">{m}</option>;
+         return <option key={m}>{m}</option>;
       });
    }, [auctions]);
 
@@ -46,16 +44,17 @@ export default function filter() {
       }, []);
 
       return models.map((m) => {
-         return <option key={m} className="text-capitalize">{m}</option>;
+         return <option key={m}>{m}</option>;
       });
    }, [auctions, curMake]);
 
-
    const filter = useCallback(() => {
-      if (!curMake) {
+
+
+      if (!curMake || curMake === 'make') {
          return;
       }
-      if (!curModel) {
+      if (!curModel || curModel === 'model') {
          router.push('/' + curMake);
          return;
       }
@@ -65,15 +64,15 @@ export default function filter() {
 
    return (
       <form className={styles.wrapper}> 
-         <select name="Make" id="make" value={curMake} onChange={() => setCurMake(event.target.value)} className={styles.select}>
-            <option value="" defaultValue disabled hidden>make</option>
+         <select name="Make" id="make" value={curMake} onChange={() => {setCurMake(event.target.value); setCurModel('model');}} className={styles.select}>
+            <option defaultValue initalValu>make</option>
             {makeElements}
          </select>
          <select name="Model" id="model" value={curModel} onChange={() => setCurModel(event.target.value)} className={styles.select}>
-            <option value="" defaultValue disabled hidden>model</option>
+            <option defaultValue>model</option>
             {modelElements}
          </select>
-         <button variant="primary"  onClick={(e) => {e.preventDefault(); filter();}}>Filter</button>
+         <button onClick={(e) => {e.preventDefault(); filter();}}>Filter</button>
       </form>
    );
 }

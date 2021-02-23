@@ -1,6 +1,7 @@
-import auctions from '../config/auctions.json';
+import { useMemo } from 'react';
 import { useRouter } from 'next/router';
-
+import auctions from '../config/auctions.json';
+import AuctionDetailsSmall from '../components/auction-details/small';
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
 ////////////////////////////////////////////////////
@@ -10,18 +11,45 @@ export default function Search() {
    const { keyword } =  router.query;
    console.log(keyword);
 
-   const vinResults = auctions.filter((a) => a.vehicleInfo.vin === parseInt(keyword));
-   const lotResults = auctions.filter((a) => a.lotNumber === parseInt(keyword));
+   if (!keyword) {
+      return <h1>Invalid or Missing Lot Number/VIN</h1>;
+   }
 
-   if (vinResults.length == 0 && lotResults.length == 0) {
+   const vinElement = useMemo(() => {
+      const vinResult = auctions.find((a) => a.vehicleInfo.vin === keyword);
+      if (!vinResult) {
+         return null;
+      }
       return (
-         <h1>No Cars Found with that VIN or Lot Number</h1>
+         <>
+            <h1>Results Matching VIN</h1>
+            <AuctionDetailsSmall auction ={vinResult}/>
+         </>
+      );
+   }, []);
+
+   const lotNumberElement = useMemo(() => {
+      const lotResult = auctions.find((a) => a.lotNumber === parseInt(keyword));
+      if (!lotResult) {
+         return null;
+      }
+      return (
+         <>
+            <h1>Results Matching Lot Number</h1>
+            <AuctionDetailsSmall auction ={lotResult}/>
+         </>
+      );
+   }, []);
+
+   if (!vinElement && !lotNumberElement) {
+      return (
+         <h1>No Vehicles Found with Lot Number or VIN {keyword} </h1>
       );
    }
-   console.log(lotResults);
-   console.log(vinResults);
-
    return (
-      <h1>hello</h1>
+      <div>
+         {lotNumberElement}
+         {vinElement}
+      </div>
    );
 }

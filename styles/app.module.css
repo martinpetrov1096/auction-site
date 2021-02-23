@@ -9,6 +9,7 @@
    background-color: var(--whiteSpaceColor);
 }
 .contentWrapper {
+   margin-top: 50px;
    width: 100%;
    max-width: 1300px;
    display: flex;
