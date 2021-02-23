@@ -13,9 +13,9 @@ export default function NavigationBar() {
             <a href="/about">About</a>     
          </div>
          <div className={styles.search}>
-            <form>
-               <input type="text" placeholder="Search Lot # or VIN" ></input>
-               <button variant="outline-success">Search</button>
+            <form action="/search">
+               <input type="text" placeholder="Search Lot # or VIN" name="keyword" ></input>
+               <button type="submit" >Search</button>
             </form>
          </div>
       </nav>

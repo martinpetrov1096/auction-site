@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
 import auctions from '../config/auctions.json';
 
@@ -12,6 +12,14 @@ export default function filter() {
    const [curMake, setCurMake] = useState();
    const [curModel, setCurModel] = useState();
    const router = useRouter();
+
+   useEffect(() => {
+      const { make, model } = router.query;
+      console.log(make + ' ' + model);
+      setCurMake(make);
+      setCurModel(model);
+   }, []);
+
 
    const makeElements = useMemo(() => {
       const makes = auctions.map((a) => {
@@ -56,19 +64,16 @@ export default function filter() {
 
 
    return (
-      <>
-         <form className={styles.wrapper}> 
-            <select name="Make" id="make" value={curMake} onChange={() => setCurMake(event.target.value)} className={styles.select}>
-               <option>make</option>
-               {makeElements}
-            </select>
-            <select name="Model" id="model" value={curModel} onChange={() => setCurModel(event.target.value)} className={styles.select}>
-               <option>model</option>
-               {modelElements}
-            </select>
-            <button variant="primary"  onClick={(e) => {e.preventDefault(); filter();}}>Filter</button>
-         </form>
-
-      </>
+      <form className={styles.wrapper}> 
+         <select name="Make" id="make" value={curMake} onChange={() => setCurMake(event.target.value)} className={styles.select}>
+            <option value="" defaultValue disabled hidden>make</option>
+            {makeElements}
+         </select>
+         <select name="Model" id="model" value={curModel} onChange={() => setCurModel(event.target.value)} className={styles.select}>
+            <option value="" defaultValue disabled hidden>model</option>
+            {modelElements}
+         </select>
+         <button variant="primary"  onClick={(e) => {e.preventDefault(); filter();}}>Filter</button>
+      </form>
    );
 }
