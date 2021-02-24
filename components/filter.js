@@ -49,12 +49,14 @@ export default function filter() {
    }, [auctions, curMake]);
 
    const filter = useCallback(() => {
-
-
-      if (!curMake || curMake === 'make') {
+      if (curMake === 'any' && curModel === 'any') {
+         router.push('/');
          return;
       }
-      if (!curModel || curModel === 'model') {
+      if (!curMake || curMake === 'any') {
+         return;
+      }
+      if (!curModel || curModel === 'any') {
          router.push('/' + curMake);
          return;
       }
@@ -64,12 +66,12 @@ export default function filter() {
 
    return (
       <form className={styles.wrapper}> 
-         <select name="Make" id="make" value={curMake} onChange={() => {setCurMake(event.target.value); setCurModel('model');}} className={styles.select}>
-            <option defaultValue initalValu>make</option>
+         <select name="Make" id="make" value={curMake} onChange={() => {setCurMake(event.target.value); setCurModel('any');}} className={styles.select}>
+            <option defaultValue>any</option>
             {makeElements}
          </select>
          <select name="Model" id="model" value={curModel} onChange={() => setCurModel(event.target.value)} className={styles.select}>
-            <option defaultValue>model</option>
+            <option defaultValue>any</option>
             {modelElements}
          </select>
          <button onClick={(e) => {e.preventDefault(); filter();}}>Filter</button>

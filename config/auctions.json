@@ -1,39 +1,46 @@
 [
    {
       "id": 5,
-      "auctioneer": "",
-      "lotNumber": 5,
-      "dateEnding": "",
-      "seller": "",
-      "location": "",
+      "auctioneer": "IAAI",
+      "lotNumber": 29079660,
+      "dateEnding": "11.02.2021",
+      "seller": "Geico Insurance",
+      "location": "East Bay (CA)",
       "notes": [
          "",
          ""
       ],
       "images": [
-         "https://smartcdn.prod.postmedia.digital/driving/wp-content/uploads/2019/04/model-s-001.jpg?quality=100&strip=all",
-         "https://www.tesla.com/assets/img/ms_tw_s.jpg"
+         "/images/tesla-model-s-2016-5yjsa1e19gf157065-img1.jpg",
+         "/images/tesla-model-s-2016-5yjsa1e19gf157065-img2.jpg",
+         "/images/tesla-model-s-2016-5yjsa1e19gf157065-img3.jpg",
+         "/images/tesla-model-s-2016-5yjsa1e19gf157065-img4.jpg",
+         "/images/tesla-model-s-2016-5yjsa1e19gf157065-img5.jpg",
+         "/images/tesla-model-s-2016-5yjsa1e19gf157065-img6.jpg",
+         "/images/tesla-model-s-2016-5yjsa1e19gf157065-img7.jpg",
+         "/images/tesla-model-s-2016-5yjsa1e19gf157065-img8.jpg",
+         "/images/tesla-model-s-2016-5yjsa1e19gf157065-img9.jpg"
       ],
       "condition": {
          "status": "stationary",
-         "primaryDamage": "",
-         "secondaryDamage": "",
-         "estimatedRetailValue": 0,
-         "estimatedRepairCost": 0,
-         "keys": ""
+         "primaryDamage": "Front End",
+         "secondaryDamage": "Left and Right Side",
+         "estimatedRetailValue": "$33422",
+         "estimatedRepairCost": "$30472",
+         "keys": "2"
       },
       "vehicleInfo": {
          "make": "tesla",
          "model": "model-s",
          "year": 2018,
-         "vin": "",
-         "mileage": "",
-         "engine": "",
-         "transmission": "",
-         "wheelsDriven": "",
-         "bodyColor": "",
+         "vin": "5YJSA1E19GF157065",
+         "mileage": "350024",
+         "engine": "Electric",
+         "transmission": "Unknown",
+         "wheelsDriven": "Rear Wheel Drive",
+         "bodyColor": "White",
          "interiorColor": "",
-         "fuel": ""
+         "fuel": "Electric"
       }
    },
    {
