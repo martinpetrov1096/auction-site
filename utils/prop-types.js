@@ -4,8 +4,8 @@ export const conditionProp = shape({
    status: string,
    primaryDamage: string,
    secondaryDamage: string,
-   estimatedRetailValue: number,
-   estimatedRepairCost: number,
+   estimatedRetailValue: string,
+   estimatedRepairCost: string,
    keys: string
 });
 
@@ -27,6 +27,7 @@ export const auctionProp = shape({
    id: number.isRequired,
    auctioneer: string.isRequired,
    lotNumber: number.isRequired,
+   price: string.isRequired,
    dateEnding: string.isRequired,
    seller: string.isRequired,
    location: string.isRequired,

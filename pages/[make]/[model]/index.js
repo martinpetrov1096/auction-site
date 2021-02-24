@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import Filter from '../../../components/filter';
 import { auctionProp } from '../../../utils/prop-types';
 import AuctionList from '../../../components/auction-list';
+import info from '../../../config/site-info.json';
+
 
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
@@ -13,12 +15,13 @@ export default function Model({ auctions }) {
    return (
       <>
          <Head>
+            <title>{auctions[0].vehicleInfo.make.charAt(0).toUpperCase() + auctions[0].vehicleInfo.make.slice(1)} {auctions[0].vehicleInfo.model.charAt(0).toUpperCase() + auctions[0].vehicleInfo.model.slice(1)} Listings </title>            
+            <meta name="description" content={`All of the listings for ${auctions[0].vehicleInfo.make.slice(1)} ${auctions[0].vehicleInfo.model.charAt(0).toUpperCase() + auctions[0].vehicleInfo.model.slice(1)}  vehicles that the site ${info.name} has free information for`}/>
          </Head>
          <Filter/>
          <AuctionList auctions={auctions}/>
       </>
    );
-
 }
 ////////////////////////////////////////////////////
 /////////////// COMPONENT PROP TYPES ///////////////

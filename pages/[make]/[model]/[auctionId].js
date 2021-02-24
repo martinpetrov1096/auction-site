@@ -1,6 +1,8 @@
+import Head from 'next/head';
 import auctions from '../../../config/auctions.json';
 import { auctionProp } from '../../../utils/prop-types';
 import LargeDetails from '../../../components/auction-details/large';
+
 
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
@@ -8,7 +10,13 @@ import LargeDetails from '../../../components/auction-details/large';
 export default function Auction({ auction }) {
 
    return (
-      <LargeDetails auction={auction}/>
+      <>
+         <Head>
+            <title>{auction.vehicleInfo.make.charAt(0).toUpperCase() + auction.vehicleInfo.make.slice(1)} {auction.vehicleInfo.model.charAt(0).toUpperCase() + auction.vehicleInfo.model.slice(1)} VIN {auction.vehicleInfo.vin} </title>            
+            <meta name="description" content={`Listing for a ${auction.vehicleInfo.make.charAt(0).toUpperCase() + auction.vehicleInfo.make.slice(1)} ${auction.vehicleInfo.model.charAt(0).toUpperCase() + auction.vehicleInfo.model.slice(1)} with VIN ${auction.vehicleInfo.vin} that was sold by ${auction.seller} on ${auction.dateEnding} for ${auction.price} on ${auction.auctioneer}`} />
+         </Head>
+         <LargeDetails auction={auction}/>
+      </>
    );
 }
 ////////////////////////////////////////////////////

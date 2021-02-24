@@ -15,7 +15,7 @@ export default function NavigationBar() {
          <div className={styles.search}>
             <form action="/search">
                <input type="text" placeholder="Search Lot # or VIN" name="keyword" ></input>
-               <button type="submit" >Search</button>
+               <button aria-label="Search" type="submit" >Search</button>
             </form>
          </div>
       </nav>

@@ -14,6 +14,7 @@ export default function ImageGallery({ images }) {
       return images.map((i, idx) => {
          return (
             <img 
+               alt={`Image #${i} for vehicle`}
                key={i}
                src={i}
                className={`${styles.thumbnail} ${curImageIdx === idx ? styles.thumbnailSelected : ''}`}
@@ -25,9 +26,9 @@ export default function ImageGallery({ images }) {
    return (
       <div className={styles.wrapper}>
          <div className={styles.curImageWrapper}>
-            <button onClick={() => setCurImageIdx(modulo((curImageIdx-1), images.length))} className={styles.prevBtn}> </button>
-            <img src={images[curImageIdx]} className={styles.curImage}/>
-            <button onClick={() => setCurImageIdx(modulo((curImageIdx+1), images.length))} className={styles.nextBtn}></button>
+            <button aria-label="Previous Image" onClick={() => setCurImageIdx(modulo((curImageIdx-1), images.length))} className={styles.prevBtn}></button>
+            <img src={images[curImageIdx]} alt="Main Image for vehicle" className={styles.curImage}/>
+            <button aria-label="Next Image" onClick={() => setCurImageIdx(modulo((curImageIdx+1), images.length))} className={styles.nextBtn}></button>
          </div>
          <div className={styles.thumbnailWrapper}>
             {thumbnails}

@@ -74,7 +74,7 @@ export default function filter() {
             <option defaultValue>any</option>
             {modelElements}
          </select>
-         <button onClick={(e) => {e.preventDefault(); filter();}}>Filter</button>
+         <button aria-label="Filter" onClick={(e) => {e.preventDefault(); filter();}}>Filter</button>
       </form>
    );
 }
