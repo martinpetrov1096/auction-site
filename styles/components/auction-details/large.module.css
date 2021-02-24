@@ -2,6 +2,7 @@
    flex: 1 1 300px;
    border-radius: 5px;
    padding: 40px;
+   height: initial;
    width: calc(100% - 80px);
    box-shadow: var(--boxShadowSmall);
    background-color: var(--bgColor);

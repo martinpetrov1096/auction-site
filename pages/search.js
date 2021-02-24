@@ -47,9 +47,9 @@ export default function Search() {
       );
    }
    return (
-      <div>
+      <>
          {lotNumberElement}
          {vinElement}
-      </div>
+      </>
    );
 }

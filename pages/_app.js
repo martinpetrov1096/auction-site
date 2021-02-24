@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import Navbar from '../components/navbar';
+import Footer from '../components/footer';
 import '../styles/global.css';
 import styles from '../styles/app.module.css';
 
@@ -13,6 +14,7 @@ export default function MyApp({ Component, pageProps }) {
          <main className={styles.contentWrapper}>
             <Component {...pageProps} />
          </main>
+         <Footer/>
       </div>
    );
 }

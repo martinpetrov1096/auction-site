@@ -1,12 +1,13 @@
 {
    "name": "Car Auction Site",
    "about": {
-      
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet viverra lacus. Nam hendrerit nibh at urna pretium, sit amet dictum risus venenatis. Etiam vel vestibulum odio. Cras efficitur nec est sit amet volutpat. Maecenas ornare blandit ullamcorper. Nunc consequat dapibus orci et malesuada. ",
+      "dateFounded": "2015"
    },
    "contact": {
-      "address": "",
-      "email": "",
-      "phone": ""
+      "address": "5674 Windsor Way",
+      "email": "martinpetrov@gmail.com",
+      "phone": "+1 (310)-420-5671"
       
    }
 }

@@ -1,3 +1,4 @@
+import info from '../config/site-info.json';
 import styles from '../styles/components/navbar.module.css';
 
 ////////////////////////////////////////////////////
@@ -9,9 +10,7 @@ export default function NavigationBar() {
    return (
       <nav className={styles.wrapper}>
          <div className={styles.links}>
-            <a href="/" className={styles.title}>Home</a>
-            <a href="/contact">Contact</a>   
-            <a href="/about">About</a>  
+            <a href="/" className={styles.title}>{info.name}</a>
          </div>
          <div className={styles.search}>
             <form action="/search">

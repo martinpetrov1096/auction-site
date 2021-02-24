@@ -14,9 +14,9 @@ export default function AuctionList({ auctions }) {
    });
 
    return (
-      <main className={styles.wrapper}>
+      <div className={styles.wrapper}>
          {auctionElements}
-      </main>
+      </div>
    );
 }
 ////////////////////////////////////////////////////
