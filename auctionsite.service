@@ -3,7 +3,7 @@ Description=Auction Site
 After=network.target
 
 [Service]
-Environment=PORT=8080
+Environment=PORT=80
 User=auctionsite
 WorkingDirectory=/home/auctionsite/auction-site
 ExecStart=/usr/local/bin/yarn start
