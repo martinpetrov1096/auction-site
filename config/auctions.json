@@ -2,9 +2,9 @@
    {
       "id": 5,
       "auctioneer": "IAAI",
-      "lotNumber": 29079660,
+      "lotNumber": 27608445,
       "price": "$35,000",
-      "dateEnding": "11.02.2021",
+      "dateEnding": "07.02.2020",
       "seller": "Geico Insurance",
       "location": "East Bay (CA)",
       "notes": [
@@ -12,36 +12,36 @@
          ""
       ],
       "images": [
-         "/images/tesla-model-s-2016-5yjsa1e19gf157065-img1.jpg",
-         "/images/tesla-model-s-2016-5yjsa1e19gf157065-img2.jpg",
-         "/images/tesla-model-s-2016-5yjsa1e19gf157065-img3.jpg",
-         "/images/tesla-model-s-2016-5yjsa1e19gf157065-img4.jpg",
-         "/images/tesla-model-s-2016-5yjsa1e19gf157065-img5.jpg",
-         "/images/tesla-model-s-2016-5yjsa1e19gf157065-img6.jpg",
-         "/images/tesla-model-s-2016-5yjsa1e19gf157065-img7.jpg",
-         "/images/tesla-model-s-2016-5yjsa1e19gf157065-img8.jpg",
-         "/images/tesla-model-s-2016-5yjsa1e19gf157065-img9.jpg"
+         "/images/mercedes-model-e-2018-img1950.jpeg",
+         "/images/mercedes-model-e-2018-img1951.jpeg",
+         "/images/mercedes-model-e-2018-img1952.jpeg",
+         "/images/mercedes-model-e-2018-img1953.jpeg",
+         "/images/mercedes-model-e-2018-img1954.jpeg",
+         "/images/mercedes-model-e-2018-img1955.jpeg",
+         "/images/mercedes-model-e-2018-img1956.jpeg",
+         "/images/mercedes-model-e-2018-img1957.jpeg"
+
       ],
       "condition": {
          "status": "stationary",
          "primaryDamage": "Front End",
-         "secondaryDamage": "Left and Right Side",
+         "secondaryDamage": "",
          "estimatedRetailValue": "$33,422",
          "estimatedRepairCost": "$30,472",
          "keys": "2"
       },
       "vehicleInfo": {
-         "make": "tesla",
-         "model": "model-s",
+         "make": "Mercedes-Benz",
+         "model": "E 300",
          "year": 2018,
-         "vin": "5YJSA1E19GF157065",
-         "mileage": "350024",
-         "engine": "Electric",
-         "transmission": "Unknown",
+         "vin": "WDDZF4JB5JA361187",
+         "mileage": "30007",
+         "engine": "Gasoline",
+         "transmission": "Automatic Transmision",
          "wheelsDriven": "Rear Wheel Drive",
-         "bodyColor": "White",
+         "bodyColor": "Black",
          "interiorColor": "",
-         "fuel": "Electric"
+         "fuel": "Gasoline"
       }
    },
    {
