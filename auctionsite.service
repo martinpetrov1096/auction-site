@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Environment=PORT=80
-User=auctionsite
+User=root
 WorkingDirectory=/home/auctionsite/auction-site
 ExecStart=/usr/local/bin/yarn start
 Restart=always
