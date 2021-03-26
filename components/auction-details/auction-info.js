@@ -15,9 +15,11 @@ export default function AuctionInfo({ auctionInfo }) {
             <li>ID: {auctionInfo.id || 'N/A'}</li>
             <li>Auctioneer: {auctionInfo.auctioneer || 'N/A'}</li>
             <li>Lot Number: {auctionInfo.lotNumber || 'N/A'}</li>
-            <li>Date Of Sale: {auctionInfo.dateEnding || 'N/A'}</li>
+            <li>Sell Price: {auctionInfo.price || 'N/A'}</li>
+            <li>Buyer: {auctionInfo.buyer || 'N/A'}</li>
             <li>Seller: {auctionInfo.seller || 'N/A'}</li>
             <li>Location: {auctionInfo.location || 'N/A'}</li>
+            <li>Date Of Sale: {auctionInfo.dateEnding || 'N/A'}</li>
          </ul>
       </div>
    );

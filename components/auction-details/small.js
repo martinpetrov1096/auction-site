@@ -24,6 +24,8 @@ export default function AuctionDetailsSmall({ auction }) {
             <ul className={styles.infoList}>
                <li>Auction: {auction.auctioneer || 'N/A'}</li>
                <li>Lot Number: {auction.lotNumber || 'N/A'}</li>
+               <li>Sell Price: {auction.price || 'N/A'}</li>
+               <li>Buyer: {auction.buyer || 'N/A'}</li>
                <li>VIN: {auction.vehicleInfo.vin || 'N/A'}</li>
                <li>Condition: {auction.condition.status || 'N/A'}</li>
                <li>Damage: {auction.condition.primaryDamage || 'N/A'}</li>

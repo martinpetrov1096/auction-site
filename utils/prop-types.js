@@ -29,6 +29,7 @@ export const auctionProp = shape({
    lotNumber: number.isRequired,
    price: string.isRequired,
    dateEnding: string.isRequired,
+   buyer: string,
    seller: string.isRequired,
    location: string.isRequired,
    notes: arrayOf(string),

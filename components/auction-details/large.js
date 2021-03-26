@@ -15,13 +15,14 @@ export default function AuctionDetailsLarge({ auction }) {
 
    return (
       <div className={styles.wrapper}>
-         <h1 className={styles.title}>{auction.vehicleInfo.make + ' ' + auction.vehicleInfo.model}</h1>
+
          <ImageGallery images={auction.images}/>
          <div className={styles.details}>
             <AuctionInfo auctionInfo={auction}/>
             <VehicleInfo vehicleInfo={auction.vehicleInfo}/>
             <ConditionInfo conditionInfo={auction.condition}/>
          </div>
+         <h1 className={styles.title}>{auction.vehicleInfo.make + ' ' + auction.vehicleInfo.model}</h1>
       </div>
    );
 }
