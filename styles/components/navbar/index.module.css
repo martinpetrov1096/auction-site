@@ -1,0 +1,13 @@
+.wrapper {
+   z-index: 100;
+   position: fixed;
+   top: 0;
+   padding: 10px;
+   width: 100%;
+   box-shadow: var(--boxShadowLarge);
+   background-color: var(--primaryColor);
+   display: flex;
+   flex-flow: row wrap;
+   align-items: center;
+   justify-content: space-between;
+}

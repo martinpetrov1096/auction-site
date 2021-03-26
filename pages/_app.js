@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Navbar from '../components/navbar';
+import Navbar from '../components/navbar/index';
 import Footer from '../components/footer';
 import '../styles/global.css';
 import styles from '../styles/app.module.css';

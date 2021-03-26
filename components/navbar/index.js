@@ -1,5 +1,4 @@
-import info from '../config/site-info.json';
-import styles from '../styles/components/navbar.module.css';
+import styles from '../../styles/components/navbar/index.module.css';
 
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
@@ -10,7 +9,6 @@ export default function NavigationBar() {
    return (
       <nav className={styles.wrapper}>
          <div className={styles.links}>
-            <a href="/" className={styles.title}>{info.name}</a>
          </div>
          <div className={styles.search}>
             <form action="/search">
