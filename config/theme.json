@@ -1,0 +1,10 @@
+{
+   "teal": "#00ADB5",
+   "grey": "#393E46",
+   "darkGrey": "#222831",
+   "shadowSmall": " 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
+   "shadowLarge": "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)",
+   "transition": "all .2s ease-in-out",
+   "fontBig": "'Michroma', sans-serif",
+   "fontSmall": "'Jura', sans-serif"
+}

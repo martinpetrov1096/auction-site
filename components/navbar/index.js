@@ -1,21 +1,79 @@
-import styles from '../../styles/components/navbar/index.module.css';
-
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import SearchBar from './searchbar';
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
 ////////////////////////////////////////////////////
 
 export default function NavigationBar() {
 
+   /**
+    * @scroll is the pageYOffset from the top
+    * of the page (given in pixels)
+    */
+   const [scroll, setScroll] = useState(0);
+   useEffect(() => {
+      const getScroll = () => {
+         setScroll(window.pageYOffset);
+      };
+      window.addEventListener('scroll', getScroll);
+
+      return () => window.removeEventListener('scroll', getScroll);
+   }, []);
+
+
    return (
-      <nav className={styles.wrapper}>
-         <div className={styles.links}>
-         </div>
-         <div className={styles.search}>
-            <form action="/search">
-               <input type="text" placeholder="Search Lot # or VIN" name="keyword" ></input>
-               <button aria-label="Search" type="submit" >Search</button>
-            </form>
-         </div>
-      </nav>
+      <Nav scroll={scroll}>
+         <Logo/>
+         <SearchBar/>
+      </Nav>
    );
 }
+
+////////////////////////////////////////////////////
+//////////////// STYLED COMPONENTS /////////////////
+////////////////////////////////////////////////////
+const Nav = styled.nav`
+   z-index: 100;
+   position: fixed;
+   top: 0;
+   width: calc(100% - 60px);
+   height: 80px;
+   background-color: white;
+   transition: ${({theme}) => theme.transition};
+   transition: padding .3s ease-in-out,
+               box-shadow .3s ease-in-out;
+   /**
+    * If @props.scroll isn't 0, then make the
+    * navbar have a shadow and make it smaller
+    */
+   ${(props) => {
+      if (props.scroll) {
+         return `
+
+
+            box-shadow: ${props.theme.shadowLarge};
+            padding: 15px 30px;
+         `;
+      } else {
+         return `
+            height: 80px;
+            box-shadow: 'none';
+            padding: 60px 30px;
+         `;
+      }
+   }}
+
+
+
+   display: flex;
+   flex-flow: row wrap;
+   align-items: center;
+   justify-content: space-between;
+`;
+
+const Logo = styled.img.attrs({
+   'src': 'logo.svg'
+})`
+   height: 100%;
+`;

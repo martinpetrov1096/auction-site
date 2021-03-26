@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura&family=Michroma&display=swap');
+
 
 :root {
    --bgColor: white;
@@ -9,12 +10,21 @@
    --boxShadowSmall: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
    --boxShadowLarge: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
    --transition: all .2s ease-in-out;
-   font-family: 'Open Sans', sans-serif;
 }
 /* To make sure there are no tiny margins */
 html, body {
    margin: 0;
    padding: 0;
+   font-family: 'Jura', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: 'Michroma', sans-serif;
 }
 
 h1 {
