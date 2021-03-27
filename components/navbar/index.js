@@ -24,7 +24,9 @@ export default function NavigationBar() {
 
    return (
       <Nav scroll={scroll}>
-         <Logo/>
+         <HomeLink>
+            <Logo/>
+         </HomeLink>
          <SearchBar/>
       </Nav>
    );
@@ -71,12 +73,10 @@ const Nav = styled.nav`
    align-items: center;
    justify-content: space-between;
    }
-
    @media screen and (max-width: 499px) {
       position: absolute;
       width: calc(100% - 60px);
       padding: 30px;
-
       display: flex;
       flex-flow: column nowrap;
       align-items: center;
@@ -85,14 +85,18 @@ const Nav = styled.nav`
    }
 `;
 
+const HomeLink = styled.a.attrs({
+   'href': '/'
+})`
+   height: 100%;
+`;
+
 const Logo = styled.img.attrs({
    'src': '/logo.svg'
 })`
    height: 100%;
-
    @media screen and (max-width: 499px) {
       padding: 30px;
       height: 150px;
-
    }
 `;

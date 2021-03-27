@@ -11,12 +11,10 @@ export default function SearchBar() {
    return (
       <SearchForm> 
          <Input></Input>
-
          <SVGButton width="30" height="30" viewBox="0 0 33 32">
             <circle r="8.41332" transform="matrix(0.719489 -0.694504 0.719489 0.694504 13.1858 12.7279)" className="stroke" strokeWidth="1.5"/>
             <rect width="3" height="9.52986" rx="1.5" transform="matrix(0.719489 -0.694504 0.719489 0.694504 18 19.389)" className="fill"/>
          </SVGButton>
- 
       </SearchForm>
    );
 }
