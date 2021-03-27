@@ -13,11 +13,8 @@ export default function NavigationBar() {
     */
    const [scroll, setScroll] = useState(0);
    useEffect(() => {
-      const getScroll = () => {
-         setScroll(window.pageYOffset);
-      };
+      const getScroll = () => setScroll(window.pageYOffset);
       window.addEventListener('scroll', getScroll);
-
       return () => window.removeEventListener('scroll', getScroll);
    }, []);
 
@@ -78,7 +75,6 @@ const Nav = styled.nav`
    align-items: center;
    justify-content: space-between;
 `;
-
 const HomeLink = styled.a.attrs({
    'href': '/'
 })`

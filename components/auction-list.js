@@ -1,7 +1,7 @@
 import { arrayOf } from 'prop-types';
 import { auctionProp } from '../utils/prop-types';
 import AuctionDetailsSmall from './auction-details/small';
-import styles from '../styles/auction-list.module.css';
+import styled from 'styled-components';
 
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
@@ -14,9 +14,9 @@ export default function AuctionList({ auctions }) {
    });
 
    return (
-      <div className={styles.wrapper}>
+      <Wrapper>
          {auctionElements}
-      </div>
+      </Wrapper>
    );
 }
 ////////////////////////////////////////////////////
@@ -26,3 +26,14 @@ export default function AuctionList({ auctions }) {
 AuctionList.propTypes = {
    auctions: arrayOf(auctionProp)
 };
+////////////////////////////////////////////////////
+//////////////// STYLED COMPONENTS /////////////////
+////////////////////////////////////////////////////
+
+const Wrapper = styled.div`
+   width: 95%;
+   display: flex;
+   flex-flow: row wrap;
+   align-items: stretch;
+   justify-content: center;
+`;
