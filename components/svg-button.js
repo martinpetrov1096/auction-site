@@ -6,13 +6,11 @@ import styled from 'styled-components';
 //////////////////// COMPONENT /////////////////////
 ////////////////////////////////////////////////////
 
-
-
 export default function SVGButton({ width, height, viewBox, children}) {
 
 
    return (
-      <Wrapper >
+      <Wrapper type="submit">
          <SVG width={width} height={height} viewBox={viewBox} fill="none" >
             {children}
          </SVG>
