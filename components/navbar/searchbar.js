@@ -27,6 +27,8 @@ export default function SearchBar() {
 const SearchForm = styled.form.attrs({
    action: '/search'
 })`
+   flex: 250px 1 1;
+   max-width: 300px;
    height: 30px;
    display: flex;
    flex-flow: row nowrap;
@@ -37,7 +39,7 @@ const Input = styled.input.attrs({
    placeholder: 'Search Lot # or VIN',
    name: 'keyword'
 })`
-   width: 200px;
+   flex: 150px 1 1;
    margin: 0;
    border: 1px solid ${({theme}) => theme.grey};
    border-radius: 20px;

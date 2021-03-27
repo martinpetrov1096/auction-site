@@ -31,26 +31,22 @@ export default function NavigationBar() {
       </Nav>
    );
 }
-
 ////////////////////////////////////////////////////
 //////////////// STYLED COMPONENTS /////////////////
 ////////////////////////////////////////////////////
-const Nav = styled.nav`
 
-   /**
-    * On screens with > 500 width, make it
-    * fixed, else assume mobile
-    */
-   @media screen and (min-width: 500px) {
+const Nav = styled.nav`
    z-index: 100;
    position: fixed;
    top: 0;
-   width: calc(100% - 60px);
-   height: 80px;
+   box-sizing: border-box;
+   width: 100%;
    background-color: white;
    transition: ${({theme}) => theme.transition};
    transition: padding .3s ease-in-out,
                box-shadow .3s ease-in-out;
+   padding-left: 30px;
+   padding-right: 30px;
    /**
    * If @props.scroll isn't 0, then make the
    * navbar have a shadow and make it smaller
@@ -59,30 +55,28 @@ const Nav = styled.nav`
       if (props.scroll) {
          return `
             box-shadow: ${props.theme.shadowLarge};
-            padding: 15px 30px;
+            padding-top: 15px;
+            padding-bottom: 15px;
          `;
       } else {
          return `
             box-shadow: 'none';
-            padding: 60px 30px;
+            padding-top: 60px;
+            padding-bottom: 60px;
          `;
       }
    }}
+   /**
+    * Mobile Styling
+    */
+   @media screen and (max-width: 500px) {
+      padding-left: 10px;
+      padding-right: 10px;
+   }
    display: flex;
-   flex-flow: row wrap;
+   flex-flow: row nowrap;
    align-items: center;
    justify-content: space-between;
-   }
-   @media screen and (max-width: 499px) {
-      position: absolute;
-      width: calc(100% - 60px);
-      padding: 30px;
-      display: flex;
-      flex-flow: column nowrap;
-      align-items: center;
-      justify-content: center;
-
-   }
 `;
 
 const HomeLink = styled.a.attrs({
@@ -90,13 +84,14 @@ const HomeLink = styled.a.attrs({
 })`
    height: 100%;
 `;
-
 const Logo = styled.img.attrs({
    'src': '/logo.svg'
 })`
-   height: 100%;
-   @media screen and (max-width: 499px) {
-      padding: 30px;
-      height: 150px;
+   height: 70px;
+   width: auto;
+   @media screen and (max-width: 500px) {
+      height: 50px;
+      width: auto;
+      margin-right: 10px;
    }
 `;
