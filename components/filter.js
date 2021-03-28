@@ -91,7 +91,6 @@ export default function filter() {
 const Form = styled.form`
    margin: 20px;
    width: calc(100% - 20px);
-
    display: flex;
    flex-flow: column nowrap;
    justify-content: stretch;

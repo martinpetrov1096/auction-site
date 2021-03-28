@@ -8,27 +8,53 @@ import { auctionProp } from '../../utils/prop-types';
 ////////////////////////////////////////////////////
 
 export default function AuctionDetailsSmall({ auction }) {
+   
    const link = useMemo(() => {
       return '/' + auction.vehicleInfo.make + '/'
          + auction.vehicleInfo.model + '/'
          + auction.id; 
    });
 
+
    return (
       <Wrapper href={link}>
          <Image src={auction.images[0]} />
          <MakeModel>{auction.vehicleInfo.make + ' ' + auction.vehicleInfo.model}</MakeModel>
-         <DetailsList>
-            <li>Auction: {auction.auctioneer || 'N/A'}</li>
-            <li>Lot Number: {auction.lotNumber || 'N/A'}</li>
-            <li>Sell Price: {auction.price || 'N/A'}</li>
-            <li>Buyer: {auction.buyer || 'N/A'}</li>
-            <li>VIN: {auction.vehicleInfo.vin || 'N/A'}</li>
-            <li>Condition: {auction.condition.status || 'N/A'}</li>
-            <li>Damage: {auction.condition.primaryDamage || 'N/A'}</li>
-            <li>Mileage: {auction.vehicleInfo.mileage || 'N/A'}</li>
-         </DetailsList>
-         <MoreDetails>More Details</MoreDetails>
+         <DetailsTable>
+            <DetailItem important>
+               <th>Auction: </th>
+               <td>{auction.auctioneer || 'N/A'}</td>
+            </DetailItem>
+            <DetailItem>
+               <th>Lot Number:</th>
+               <td> {auction.lotNumber || 'N/A'}</td>
+            </DetailItem>
+            <DetailItem>
+               <th>Sell Price:</th>
+               <td> {auction.price || 'N/A'}</td>
+            </DetailItem>
+            <DetailItem>
+               <th>Buyer:</th>
+               <td>{auction.buyer || 'N/A'}</td>
+            </DetailItem>
+            <DetailItem>
+               <th>VIN:</th>
+               <td> {auction.vehicleInfo.vin || 'N/A'}</td>
+            </DetailItem>
+            <DetailItem>
+               <th>Condition:</th>
+               <td> {auction.condition.status || 'N/A'}</td>
+            </DetailItem>
+            <DetailItem>
+               <th>Damage:</th>
+               <td> {auction.condition.primaryDamage || 'N/A'}</td>
+            </DetailItem>
+            <DetailItem>
+               <th>Mileage:</th>
+               <td> {auction.vehicleInfo.mileage || 'N/A'}</td>
+            </DetailItem>
+         </DetailsTable>
+         <MoreDetailsButton>More Details</MoreDetailsButton>
       </Wrapper>
    );
 }
@@ -65,7 +91,7 @@ const Wrapper = styled.a`
    display: flex;
    flex-flow: column nowrap;
    align-items: center;
-   justify-content: stretch;
+   justify-content: sDetailItemetch;
 `;
 const Image = styled.img`
    height: 250px;
@@ -75,14 +101,36 @@ const Image = styled.img`
 
 `;
 const MakeModel = styled.h2`
+   width: 90%;
+   text-align: center;
+   text-transform: capitalize;
+`;
+const DetailsTable = styled.table`
+   width: 90%;
+`;
+const DetailItem = styled.tr`
+   text-transform: capitalize;
+   > th, td {
+      font-weight: ${({important}) => important ? 'bold' : 'normal'};
+   }
+   /* :nth-of-type(odd) {
+      background-color: light-grey;
+   } */
+   > th {
+      text-align: left;
+   }
+   > td {
+      text-align: right;
 
+   }
+   :hover {
+      > td, th {
+         border-bottom: solid 1px ${({theme}) => theme.grey};
+      }
+   }
 
 `;
-const DetailsList = styled.ul`
-   flex-grow: 1;
-
-`;
-const MoreDetails = styled.h3`
+const MoreDetailsButton = styled.h3`
    width: 100%;
    height: 50px;
    padding: auto;
