@@ -18,8 +18,8 @@ export default function Home() {
             <title>Free history of sales, prices and damage</title>
             <meta name="description" content={`The site ${info.name} provides free information on the statistics of prices for wrecked and/or salvaged cars from the US after insurance claims.`}/>
          </Head>
-         <Filter/>
          <Test>All Auctions</Test>
+         <Filter/>
          <AuctionList auctions={auctions}/>
       </>
    );
@@ -27,7 +27,5 @@ export default function Home() {
 
 
 const Test = styled.h1`
-   color: red;
-
-
+   color: ${({theme}) => theme.darkGrey};
 `;
