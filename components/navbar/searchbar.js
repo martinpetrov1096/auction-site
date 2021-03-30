@@ -27,7 +27,7 @@ export default function SearchBar() {
 const SearchForm = styled.form.attrs({
    action: '/search'
 })`
-   flex: 250px 1 1;
+   flex: 250px 1 2;
    max-width: 300px;
    height: 30px;
    display: flex;

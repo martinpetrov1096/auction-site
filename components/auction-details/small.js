@@ -19,7 +19,8 @@ export default function AuctionDetailsSmall({ auction }) {
       [
          {
             name: 'Auction',
-            value: auction.auctioneer
+            value: auction.auctioneer,
+            important: true
          },
          {
             name: 'Lot Number',
@@ -27,11 +28,13 @@ export default function AuctionDetailsSmall({ auction }) {
          },
          {
             name: 'Sell Price',
-            value: auction.price
+            value: auction.price,
+            important: true            
          },
          {
             name: 'Buyer',
-            value: auction.buyer
+            value: auction.buyer,
+            important: true
          },
          {
             name: 'VIN',
