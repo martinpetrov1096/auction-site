@@ -15,7 +15,7 @@ export default function Home() {
    return (
       <>
          <Head>
-            <title>Free history of sales, prices and damage</title>
+            <title>Auction Engine</title>
             <meta name="description" content={`The site ${info.name} provides free information on the statistics of prices for wrecked and/or salvaged cars from the US after insurance claims.`}/>
          </Head>
          <Title>All Auctions</Title>

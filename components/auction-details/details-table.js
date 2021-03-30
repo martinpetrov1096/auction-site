@@ -23,7 +23,6 @@ export default function DetailsTable({ details }) {
       </Wrapper>
    );
 }
-
 ////////////////////////////////////////////////////
 /////////////// COMPONENT PROP TYPES ///////////////
 ////////////////////////////////////////////////////
@@ -43,7 +42,6 @@ DetailsTable.propTypes = {
 ////////////////////////////////////////////////////
 //////////////// STYLED COMPONENTS /////////////////
 ////////////////////////////////////////////////////
-
 const Wrapper = styled.ul`
    width: inherit;
    margin: 0;
@@ -56,7 +54,7 @@ const Wrapper = styled.ul`
 `;
 const Detail = styled.li`
    width: 90%;
-   border-bottom: solid 1px grey;
+   /* border-bottom: solid 1px grey; */
    padding-bottom: 0px;
    list-style-type: none;
    font-family: 'Jura', sans-serif;

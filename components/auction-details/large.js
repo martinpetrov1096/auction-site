@@ -48,10 +48,13 @@ export default function AuctionDetailsLarge({ auction }) {
       {
          name: 'Make',
          value: auction.vehicleInfo.make,
+         important: true
       },
       {
          name: 'Model',
-         value: auction.vehicleInfo.model
+         value: auction.vehicleInfo.model,
+         important: true
+
       },
       {
          name: 'Year',
@@ -123,16 +126,22 @@ export default function AuctionDetailsLarge({ auction }) {
    ], []);
 
 
-
    return (
       <Wrapper>
          <MyImageGallery images={auction.images}/>
          <DetailsWrapper>
+            {/* <MakeModel>{auction.vehicleInfo.make + ' ' + auction.vehicleInfo.model}</MakeModel> */}
+            
+            <DetailHeader>Auction Details</DetailHeader>
             <DetailsTable details={auctionDetails}/>
+
+            <DetailHeader>Vehicle Details</DetailHeader>
             <DetailsTable details={vehicleDetails}/>
+
+            <DetailHeader>Condition</DetailHeader>
             <DetailsTable details={conditionDetails}/>
          </DetailsWrapper>
-         <MakeModel>{auction.vehicleInfo.make + ' ' + auction.vehicleInfo.model}</MakeModel>
+
       </Wrapper>
    );
 }
@@ -150,29 +159,28 @@ AuctionDetailsLarge.propTypes = {
 const Wrapper = styled.div`
    width: min(1300px, 80%);
    border-radius: 20px;
-   padding: 5%;
+   padding: min(50px, 5%);
    box-shadow: ${({theme}) => theme.shadowSmall};
-
    display: flex;
+   /* Reverse wrap so image gallery is at the end on mobile */
    flex-flow: row wrap-reverse;
    justify-content: space-around;
-   align-items: flex-start;
+   align-items: flex-end;
 `;
-const MakeModel = styled.h2`
-   text-transform: capitalize;
-   text-align: center;
+const MyImageGallery = styled(ImageGallery)`
+   flex: 1 1 60%;
+   height: min(600px, 100%);
 `;
 const DetailsWrapper = styled.div`
    flex: 1 3 30%;
    min-width: 200px;
 
-   margin-left: 10px;
+
    display: flex;
-   flex-flow: row wrap;
+   flex-flow: column nowrap;
    justify-content: stretch;
 `;
-
-const MyImageGallery = styled(ImageGallery)`
-   flex: 1 1 25%;
-   height: min(600px, 100%);
+const DetailHeader = styled.h3`
+   text-align: center;
+   border-bottom: solid 1px grey;
 `;
