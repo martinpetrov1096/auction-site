@@ -67,7 +67,7 @@ export default function filter() {
    return (
       <Form>
          <SelectWrapper>
-            <Label for="make">Filter By Car Manufacturers</Label>
+            <Label htmlFor="make">Filter By Car Manufacturers</Label>
             {/* When choosing a new make, reset curModel to be 'any' */}
             <Select name="Make" id="make" value={curMake} onChange={() => {setCurMake(event.target.value); setCurModel('any');}}>
                <option defaultValue>any</option>
@@ -75,7 +75,7 @@ export default function filter() {
             </Select>
          </SelectWrapper>
          <SelectWrapper  hidden={curMake === 'any'}>
-            <Label for="model">Filter By Car Models</Label>
+            <Label htmldFor="model">Filter By Car Models</Label>
             <Select name="Model" id="model" value={curModel} onChange={() => setCurModel(event.target.value)}>
                <option defaultValue>any</option>
                {modelElements}

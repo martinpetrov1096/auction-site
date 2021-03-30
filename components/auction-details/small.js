@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import styled from 'styled-components';
 import { auctionProp } from '../../utils/prop-types';
-
+import DetailsTable from './details-table';
 
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
@@ -13,47 +13,50 @@ export default function AuctionDetailsSmall({ auction }) {
       return '/' + auction.vehicleInfo.make + '/'
          + auction.vehicleInfo.model + '/'
          + auction.id; 
-   });
+   }, []);
 
+   const details =
+      [
+         {
+            name: 'Auction',
+            value: auction.auctioneer
+         },
+         {
+            name: 'Lot Number',
+            value: auction.lotNumber
+         },
+         {
+            name: 'Sell Price',
+            value: auction.price
+         },
+         {
+            name: 'Buyer',
+            value: auction.buyer
+         },
+         {
+            name: 'VIN',
+            value: auction.vin
+         },
+         {
+            name: 'Condition',
+            value: auction.condition.status
+         },
+         {
+            name: 'Damage',
+            value: auction.primaryDamage
+         },
+         {
+            name: 'Mileage',
+            value: auction.mileage
+         }
 
+      ];
+      
    return (
       <Wrapper href={link}>
          <Image src={auction.images[0]} />
          <MakeModel>{auction.vehicleInfo.make + ' ' + auction.vehicleInfo.model}</MakeModel>
-         <DetailsTable>
-            <DetailItem important>
-               <th>Auction: </th>
-               <td>{auction.auctioneer || 'N/A'}</td>
-            </DetailItem>
-            <DetailItem>
-               <th>Lot Number:</th>
-               <td> {auction.lotNumber || 'N/A'}</td>
-            </DetailItem>
-            <DetailItem>
-               <th>Sell Price:</th>
-               <td> {auction.price || 'N/A'}</td>
-            </DetailItem>
-            <DetailItem>
-               <th>Buyer:</th>
-               <td>{auction.buyer || 'N/A'}</td>
-            </DetailItem>
-            <DetailItem>
-               <th>VIN:</th>
-               <td> {auction.vehicleInfo.vin || 'N/A'}</td>
-            </DetailItem>
-            <DetailItem>
-               <th>Condition:</th>
-               <td> {auction.condition.status || 'N/A'}</td>
-            </DetailItem>
-            <DetailItem>
-               <th>Damage:</th>
-               <td> {auction.condition.primaryDamage || 'N/A'}</td>
-            </DetailItem>
-            <DetailItem>
-               <th>Mileage:</th>
-               <td> {auction.vehicleInfo.mileage || 'N/A'}</td>
-            </DetailItem>
-         </DetailsTable>
+         <DetailsTable details={details}/>
          <MoreDetailsButton>More Details</MoreDetailsButton>
       </Wrapper>
    );
@@ -78,6 +81,10 @@ const Wrapper = styled.a`
    text-decoration: inherit;
    transition: box-shadow .2s ease-in-out,
                transform .2s ease-in-out;
+   /**
+    * On hover, make the card and it's box shadow
+    * bigger and make the more details button green
+   */
    :hover {
       box-shadow: ${({theme}) => theme.shadowLarge};
       transform: scale(1.01);
@@ -85,50 +92,24 @@ const Wrapper = styled.a`
          background-color: ${({theme}) => theme.teal};
       }
    }
+   /* Make margins smaller on mobile */
    @media screen and (max-width: 500px) {
       margin: 40px 5px;
    }
    display: flex;
    flex-flow: column nowrap;
    align-items: center;
-   justify-content: sDetailItemetch;
 `;
 const Image = styled.img`
    height: 250px;
    width: 100%;
    object-fit: cover;
    border-radius: 20px 20px 0 0;
-
 `;
 const MakeModel = styled.h2`
    width: 90%;
    text-align: center;
    text-transform: capitalize;
-`;
-const DetailsTable = styled.table`
-   width: 90%;
-`;
-const DetailItem = styled.tr`
-   text-transform: capitalize;
-   > th, td {
-      font-weight: ${({important}) => important ? 'bold' : 'normal'};
-   }
-   /* :nth-of-type(odd) {
-      background-color: light-grey;
-   } */
-   > th {
-      text-align: left;
-   }
-   > td {
-      text-align: right;
-
-   }
-   :hover {
-      > td, th {
-         border-bottom: solid 1px ${({theme}) => theme.grey};
-      }
-   }
-
 `;
 const MoreDetailsButton = styled.h3`
    width: 100%;
