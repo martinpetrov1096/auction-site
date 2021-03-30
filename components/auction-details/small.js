@@ -15,7 +15,7 @@ export default function AuctionDetailsSmall({ auction }) {
          + auction.id; 
    }, []);
 
-   const details =
+   const details = useMemo(() => 
       [
          {
             name: 'Auction',
@@ -53,7 +53,7 @@ export default function AuctionDetailsSmall({ auction }) {
             value: auction.mileage
          }
 
-      ];
+      ], []);
       
    return (
       <Wrapper href={link}>
