@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useMemo, useState, useEffect } from 'react';
 import styled from 'styled-components';
-
+import SVGButton from '../svg-button';
 
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
@@ -33,9 +33,19 @@ export default function ImageGallery({ images, className }) {
    return (
       <Wrapper className={className}>
          <CurImageWrapper>
-            <PrevBtn  onClick={() => setCurImageIdx(modulo((curImageIdx-1), images.length))}/>
+            <PrevBtn  onClick={() => setCurImageIdx(modulo((curImageIdx-1), images.length))}>
+               <SVGButton width="50" height="50" viewBox="0 0 120 120">
+                  <circle cx="60" cy="60" r="60" className="fill"/>
+                  <path d="M59.5 47.125L37.7537 70L36 67.75L59.5 43L83 67.75L80.8955 70L59.5 47.125Z" fill="white" strokeWidth="4"/>
+               </SVGButton>
+            </PrevBtn>
             { curImg }
-            <NextBtn onClick={() => setCurImageIdx(modulo((curImageIdx+1), images.length))}/>
+            <NextBtn onClick={() => setCurImageIdx(modulo((curImageIdx+1), images.length))}>
+               <SVGButton width="50" height="50" viewBox="0 0 120 120">
+                  <circle cx="60" cy="60" r="60" className="fill"/>
+                  <path d="M59.5 47.125L37.7537 70L36 67.75L59.5 43L83 67.75L80.8955 70L59.5 47.125Z" fill="white" strokeWidth="4"/>
+               </SVGButton>
+            </NextBtn>
          </CurImageWrapper>
          <ThumbnailWrapper>
             {thumbnails}
@@ -65,7 +75,6 @@ const Wrapper = styled.div`
    display: flex;
    flex-flow: column nowrap;
    justify-content: space-between;
-
 `;
 const CurImageWrapper = styled.div`
    position: relative;
@@ -74,50 +83,48 @@ const CurImageWrapper = styled.div`
    margin: 0;
    border-radius: 20px;
    padding: 0;
-
    display: flex;
    flex-flow: row nowrap;
 `;
 const CurImage = styled.img`
    width: 100%;
-   height: 100%;
-   border-top-left-radius: 20px;
-   border-top-right-radius: 20px;
    border-radius: inherit;
    object-fit: cover;
 `;
 const Button = styled.button`
    position: absolute;
-   height: 100%;
-   width: 50%;
+   top: 50%;
+   margin: 0 10px;
    border: none;
+   border-radius: 100%;
    padding: 0;
-   opacity: 0;
+   opacity: .8;
    transition: background-color .2s ease-in-out;
-   :hover {
-      opacity: .2;
-      background-color: ${({theme}) => theme.teal};
+   background-color: transparent;
+   :focus {
+      outline: none;
+      box-shadow: none;
    }
 `;
 const NextBtn = styled(Button).attrs({
    ariaLabel: 'Next Image'
 })`
    right: 0;
+   transform: rotate(90deg);
 `;
 const PrevBtn = styled(Button).attrs({
    ariaLabel: 'Previous Image'
 })`
    left: 0;
+   transform: rotate(-90deg);
 `;
 const ThumbnailWrapper = styled.div`
    margin-top: 10px;
    height: 100px;
    width: 100%;
    overflow-x: scroll;
-
    display: flex;
    flex-flow: row nowrap;
-
 `;
 const Thumbnail = styled.img`
    height: 75px;

@@ -1,16 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@400;700&family=Michroma&display=swap');
 
-
-:root {
-   --bgColor: white;
-   --offwhiteColor: #EEEEEE;
-   --tealColor: #393E46;
-   --greyColor: #00ADB5;
-   --darkGreyColor: #222831;
-   --boxShadowSmall: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-   --boxShadowLarge: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-   --transition: all .2s ease-in-out;
-}
 /* To make sure there are no tiny margins */
 html, body {
    margin: 0;
@@ -26,23 +15,3 @@ h5,
 h6 {
    font-family: 'Michroma', sans-serif;
 }
-
-/* h1 {
-   font-size: 36px;
-}
-
-h2 {
-   font-size: 32px;
-}
-h3 {
-   font-size: 28px
-}
-h4 {
-   font-size: 24px;
-}
-h5 {
-   font-size: 20px;
-}
-h6 {
-   font-size: 16px;
-} */

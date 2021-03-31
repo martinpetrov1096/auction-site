@@ -14,6 +14,7 @@ export default function MyApp({ Component, pageProps }) {
    return (
       <>
          <Head>
+            <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
             <meta httpEquiv="content-type" content="text/html; charset=UTF-8"></meta>
          </Head>
          <ThemeProvider theme={theme}>
@@ -25,7 +26,6 @@ export default function MyApp({ Component, pageProps }) {
                <Footer/>
             </Wrapper>
          </ThemeProvider>
-
       </>
    );
 }
