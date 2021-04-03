@@ -1,16 +1,28 @@
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
+import ReactGA from 'react-ga';
+import { useEffect } from 'react';
 import theme from '../config/theme.json';
 import Navbar from '../components/navbar/index';
 import Footer from '../components/footer';
 import '../styles/global.css';
 import Head from 'next/head';
 
-
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
 ////////////////////////////////////////////////////
 export default function MyApp({ Component, pageProps }) {
+
+   /**
+    * Google Analytics Config Section
+    */
+   useEffect(() => {
+      const trackingId = 'UA-192775957-1';
+      ReactGA.initialize(trackingId);
+      ReactGA.pageview(window.location.pathname + window.location.search);
+   }, []);
+
+
    return (
       <>
          <Head>
