@@ -1,21 +1,56 @@
-import styles from '../styles/components/footer.module.css';
 import info from '../config/site-info.json';
+import styled from 'styled-components';
+
+
+////////////////////////////////////////////////////
+//////////////////// COMPONENT /////////////////////
+////////////////////////////////////////////////////
 
 export default function Footer() {
 
    return (
-      <div className={styles.wrapper}>
-         <div className={styles.section}>
+      <Wrapper>
+         <Section>
             <h4>Contact</h4>
             <p>Phone Number: {info.contact.phone}</p>
             <p>Email: {info.contact.email}</p>
             <p>Address: {info.contact.address}</p>
-         </div>
-         <div className={styles.section}>
+         </Section>
+         <Section>
             <h4>About</h4>
             <p>{info.about.description}</p>
-         </div>
+         </Section>
 
-      </div>
+      </Wrapper>
    );
 }
+////////////////////////////////////////////////////
+//////////////// STYLED COMPONENTS /////////////////
+////////////////////////////////////////////////////
+
+const Wrapper = styled.div`
+   position: relative;
+   bottom: 0;
+   padding: 20px;
+   margin-top: 100px;
+   width: calc(100% - 40px);
+   background-color: ${({theme}) => theme.grey};
+   color: white;
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: center;
+   align-items: baseline;
+`;
+
+const Section = styled.div`
+   width: 400px;
+   .section > h4 {
+   margin-bottom: 10px;
+}
+.section > h6 {
+   margin: 5px;
+}
+.section > p {
+   font-size: 14px;
+}
+`;

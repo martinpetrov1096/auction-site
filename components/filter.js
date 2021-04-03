@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
 import auctions from '../config/auctions.json';
 
-import styles from '../styles/components/filter.module.css';
+import styled from 'styled-components';
 
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
@@ -10,13 +10,13 @@ import styles from '../styles/components/filter.module.css';
 
 export default function filter() {
    const router = useRouter();
-   const [curMake, setCurMake] = useState();
-   const [curModel, setCurModel] = useState();
+   const [curMake, setCurMake] = useState('any');
+   const [curModel, setCurModel] = useState('any');
 
    useEffect(() => {
       const { make, model } = router.query;
-      setCurMake(make);
-      setCurModel(model);
+      setCurMake(make ?? 'any');
+      setCurModel(model ?? 'any');
    }, []);
 
    const makeElements = useMemo(() => {
@@ -65,16 +65,70 @@ export default function filter() {
 
 
    return (
-      <form className={styles.wrapper}> 
-         <select name="Make" id="make" value={curMake} onChange={() => {setCurMake(event.target.value); setCurModel('any');}} className={styles.select}>
-            <option defaultValue>any</option>
-            {makeElements}
-         </select>
-         <select name="Model" id="model" value={curModel} onChange={() => setCurModel(event.target.value)} className={styles.select}>
-            <option defaultValue>any</option>
-            {modelElements}
-         </select>
-         <button aria-label="Filter" onClick={(e) => {e.preventDefault(); filter();}}>Filter</button>
-      </form>
+      <Form>
+         <SelectWrapper>
+            <Label htmlFor="make">Filter By Car Manufacturers</Label>
+            {/* When choosing a new make, reset curModel to be 'any' */}
+            <Select name="Make" id="make" value={curMake} onChange={() => {setCurMake(event.target.value); setCurModel('any');}}>
+               <option defaultValue>any</option>
+               {makeElements}
+            </Select>
+         </SelectWrapper>
+         <SelectWrapper  hidden={curMake === 'any'}>
+            <Label htmldFor="model">Filter By Car Models</Label>
+            <Select name="Model" id="model" value={curModel} onChange={() => setCurModel(event.target.value)}>
+               <option defaultValue>any</option>
+               {modelElements}
+            </Select>
+         </SelectWrapper>
+         <FilterButton onClick={(e) => {e.preventDefault(); filter();}}>Filter</FilterButton>
+      </Form>
    );
 }
+////////////////////////////////////////////////////
+//////////////// STYLED COMPONENTS /////////////////
+////////////////////////////////////////////////////
+const Form = styled.form`
+   margin: 20px;
+   width: calc(100% - 20px);
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: stretch;
+   align-items: center;
+`;
+const SelectWrapper = styled.div`
+   width: min(400px, 95%);
+   font-family: 'Jura', sans-serif;
+   display: ${({hidden}) => hidden ? 'none' : 'flex'};
+   flex-flow: column nowrap;
+   justify-content: stretch;
+`;
+const Label = styled.label`
+   text-align: center;
+`;
+const Select = styled.select`
+   height: 40px;
+   margin: 10px 0;
+   padding: 10px;
+   border-radius: 15px;
+   background-color: var(--bgColor);
+   font-family: 'Jura', sans-serif;
+   text-transform: capitalize;
+   text-align: center;
+`;
+const FilterButton = styled.button.attrs({
+   ariaLabel: 'Filter'
+})`
+   border: none;
+   border-radius: 10px;
+   padding: 10px 20px;
+   font-family: 'Michroma', sans-serif;
+   letter-spacing: 1px;
+   font-size: 12px;
+   color: white;
+   background-color: ${({theme}) => theme.grey};
+   transition: background-color .2s ease-in-out;
+   :hover {
+      background-color: ${({theme}) => theme.teal};
+   }
+`;
