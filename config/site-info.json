@@ -1,13 +1,13 @@
 {
-   "name": "Car Auction Site",
+   "name": "MaxAuto",
    "about": {
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet viverra lacus. Nam hendrerit nibh at urna pretium, sit amet dictum risus venenatis. Etiam vel vestibulum odio. Cras efficitur nec est sit amet volutpat. Maecenas ornare blandit ullamcorper. Nunc consequat dapibus orci et malesuada. ",
+      "description": "MaxAuto provides free and accurate information on auctions for wrecked and/or salvaged cars from the US after insurance claims. ",
       "dateFounded": "2015"
    },
    "contact": {
-      "address": "5674 Windsor Way",
-      "email": "support@auctionengine.com",
-      "phone": "+1 (310)-420-5671"
+      "address": "Sofia, j.k. Banishora 92",
+      "email": "autos@grabtogo.com",
+      "phone": "+359888105288 "
       
    }
 }
