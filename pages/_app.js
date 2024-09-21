@@ -62,8 +62,8 @@ const Wrapper = styled.div`
    align-items: center;
 `;
 const Main = styled.main`
-   margin-top: 200px;
-   padding-top: 80px;
+   margin-top: 100px;
+   //padding-top: 80px;
    width: 100%;
    display: flex;
    flex-flow: column nowrap;

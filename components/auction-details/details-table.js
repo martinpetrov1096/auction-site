@@ -44,9 +44,9 @@ DetailsTable.propTypes = {
 //////////////// STYLED COMPONENTS /////////////////
 ////////////////////////////////////////////////////
 const Wrapper = styled.ul`
-   width: inherit;
+   width: calc(100% - 20px);
    margin: 0;
-   padding: 0;
+   padding: 10px;
 
    display: flex;
    flex-flow: column nowrap;
@@ -54,11 +54,12 @@ const Wrapper = styled.ul`
    align-items: center;
 `;
 const Detail = styled.li`
-   width: 90%;
+   width: 100%;
    /* border-bottom: solid 1px grey; */
    padding-bottom: 0px;
    list-style-type: none;
    font-family: ${({theme}) => theme.font};
+   font-size: 12px;
    font-weight: ${({important}) => important ? 'bold' : 'normal'};
    text-transform: capitalize;
    display: flex;

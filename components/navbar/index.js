@@ -40,8 +40,8 @@ const Nav = styled.nav`
    width: 100%;
    background-color: white;
    transition: ${({theme}) => theme.transition};
-   transition: padding .3s ease-in-out,
-               box-shadow .3s ease-in-out;
+   transition: padding .1s ease-in-out,
+               box-shadow .1s ease-in-out;
    padding-left: 30px;
    padding-right: 30px;
    /**
@@ -52,14 +52,14 @@ const Nav = styled.nav`
       if (props.scroll) {
          return `
             box-shadow: ${props.theme.shadowLarge};
-            padding-top: 15px;
-            padding-bottom: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
          `;
       } else {
          return `
             box-shadow: 'none';
-            padding-top: 60px;
-            padding-bottom: 60px;
+            padding-top: 20px;
+            padding-bottom: 20px;
          `;
       }
    }}

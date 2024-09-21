@@ -35,5 +35,5 @@ const Wrapper = styled.div`
    display: flex;
    flex-flow: row wrap;
    align-items: stretch;
-   justify-content: center;
+   justify-content: flex-start;
 `;

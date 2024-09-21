@@ -76,10 +76,14 @@ AuctionDetailsSmall.propTypes = {
 ////////////////////////////////////////////////////
 
 const Wrapper = styled.a`
-   width: min(400px, 95%);
-   margin: 40px;
+   //width: min(300px, 95%);
+ 
+   flex: 0 0 300px;
+   max-width: 400px;
+   //padding: 5px;'
+   margin: 5px;
    border-radius: 5px;
-   box-shadow: ${({theme}) => theme.shadowSmall};
+   box-shadow: 0 1px 2px rgba(0,0,0,0.19), 0 1px 1px rgba(0,0,0,0.23);
    color: inherit;
    text-decoration: inherit;
    transition: box-shadow .2s ease-in-out,
@@ -88,9 +92,7 @@ const Wrapper = styled.a`
     * On hover, make the card and it's box shadow
     * bigger and make the more details button green
    */
-   :hover {
-      box-shadow: ${({theme}) => theme.shadowLarge};
-      transform: scale(1.01);
+   :hover { 
       > h3 {
          background-color: ${({theme}) => theme.teal};
       }

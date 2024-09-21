@@ -160,6 +160,7 @@ const Wrapper = styled.div`
    width: min(1300px, 80%);
    border-radius: 20px;
    padding: min(50px, 5%);
+   padding-top: 0px;
    box-shadow: ${({theme}) => theme.shadowSmall};
    display: flex;
    /* Reverse wrap so image gallery is at the end on mobile */
