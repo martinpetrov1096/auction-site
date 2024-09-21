@@ -81,7 +81,7 @@ const CurImageWrapper = styled.div`
    width: 100%;
    height: min(600px, 60vw);
    margin: 0;
-   border-radius: 20px;
+   border-radius: 5px;
    padding: 0;
    display: flex;
    flex-flow: row nowrap;

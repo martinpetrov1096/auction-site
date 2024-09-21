@@ -78,7 +78,7 @@ AuctionDetailsSmall.propTypes = {
 const Wrapper = styled.a`
    width: min(400px, 95%);
    margin: 40px;
-   border-radius: 20px;
+   border-radius: 5px;
    box-shadow: ${({theme}) => theme.shadowSmall};
    color: inherit;
    text-decoration: inherit;
@@ -107,7 +107,7 @@ const Image = styled.img`
    height: 250px;
    width: 100%;
    object-fit: cover;
-   border-radius: 20px 20px 0 0;
+   border-radius: 5px 5px 0 0;
 `;
 const MakeModel = styled.h2`
    width: 90%;
@@ -119,7 +119,7 @@ const MoreDetailsButton = styled.h3`
    height: 50px;
    padding: auto;
    margin-bottom: auto;
-   border-radius: 0 0 20px 20px;
+   border-radius: 0 0 5px 5px;
    text-align: center;
    /* centers text vertically */
    line-height: 50px;

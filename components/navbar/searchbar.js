@@ -42,9 +42,9 @@ const Input = styled.input.attrs({
    flex: 150px 1 1;
    margin: 0;
    border: 1px solid ${({theme}) => theme.grey};
-   border-radius: 20px;
+   border-radius: 5px;
    padding: 15px;
-   font-family: ${({theme}) => theme.fontSmall};
+   font-family: ${({theme}) => theme.font};
    transition: ${({theme}) => theme.transition};
    :focus {
       outline: none;

@@ -98,7 +98,7 @@ const Form = styled.form`
 `;
 const SelectWrapper = styled.div`
    width: min(400px, 95%);
-   font-family: 'Jura', sans-serif;
+   font-family: ${({theme}) => theme.font};
    display: ${({hidden}) => hidden ? 'none' : 'flex'};
    flex-flow: column nowrap;
    justify-content: stretch;
@@ -110,9 +110,9 @@ const Select = styled.select`
    height: 40px;
    margin: 10px 0;
    padding: 10px;
-   border-radius: 15px;
+   border-radius: 5px;
    background-color: var(--bgColor);
-   font-family: 'Jura', sans-serif;
+   font-family: ${({theme}) => theme.font};
    text-transform: capitalize;
    text-align: center;
 `;
@@ -120,9 +120,9 @@ const FilterButton = styled.button.attrs({
    ariaLabel: 'Filter'
 })`
    border: none;
-   border-radius: 10px;
+   border-radius: 5px;
    padding: 10px 20px;
-   font-family: 'Michroma', sans-serif;
+   font-family: ${({theme}) => theme.font};
    letter-spacing: 1px;
    font-size: 12px;
    color: white;

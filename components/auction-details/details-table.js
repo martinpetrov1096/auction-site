@@ -58,7 +58,7 @@ const Detail = styled.li`
    /* border-bottom: solid 1px grey; */
    padding-bottom: 0px;
    list-style-type: none;
-   font-family: 'Jura', sans-serif;
+   font-family: ${({theme}) => theme.font};
    font-weight: ${({important}) => important ? 'bold' : 'normal'};
    text-transform: capitalize;
    display: flex;
