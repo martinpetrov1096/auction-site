@@ -29,7 +29,7 @@ export default function AuctionDetailsSmall({ auction }) {
          {
             name: 'Sell Price',
             value: auction.price,
-            important: true            
+            important: true
          },
          {
             name: 'Buyer',

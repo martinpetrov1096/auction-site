@@ -47,14 +47,14 @@ const Wrapper = styled.ul`
    width: calc(100% - 20px);
    margin: 0;
    padding: 10px;
-
    display: flex;
    flex-flow: column nowrap;
    justify-content: center;
    align-items: center;
 `;
 const Detail = styled.li`
-  // width: 100%;
+   width: 100%;
+   border-bottom: 1px dotted grey;
    /* border-bottom: solid 1px grey; */
    padding-bottom: 0px;
    list-style-type: none;
