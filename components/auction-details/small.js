@@ -38,7 +38,7 @@ export default function AuctionDetailsSmall({ auction }) {
          },
          {
             name: 'VIN',
-            value: auction.vin
+            value: auction.vehicleInfo.vin
          },
          {
             name: 'Condition',
