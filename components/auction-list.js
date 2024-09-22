@@ -32,8 +32,13 @@ AuctionList.propTypes = {
 
 const Wrapper = styled.div`
    width: 95%;
-   display: flex;
+   /* display: flex;
    flex-flow: row wrap;
    align-items: stretch;
-   justify-content: flex-start;
+   justify-content: flex-start; */
+
+   display: grid;
+   gap: 1rem;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
 `;

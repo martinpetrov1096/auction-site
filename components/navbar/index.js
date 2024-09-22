@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import SearchBar from './searchbar';
+import Logo from '../../config/logo.svg';
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
 ////////////////////////////////////////////////////
@@ -22,7 +23,7 @@ export default function NavigationBar() {
    return (
       <Nav scroll={scroll}>
          <HomeLink>
-            <Logo/>
+            <StyledLogo/>
          </HomeLink>
          <SearchBar/>
       </Nav>
@@ -80,9 +81,7 @@ const HomeLink = styled.a.attrs({
 })`
    height: 100%;
 `;
-const Logo = styled.img.attrs({
-   'src': '/logo.svg'
-})`
+const StyledLogo = styled(Logo)`
    height: 70px;
    width: auto;
    @media screen and (max-width: 500px) {

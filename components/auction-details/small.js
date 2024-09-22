@@ -77,9 +77,10 @@ AuctionDetailsSmall.propTypes = {
 
 const Wrapper = styled.a`
    //width: min(300px, 95%);
+   width: 100%;
  
    flex: 0 0 300px;
-   max-width: 400px;
+
    //padding: 5px;'
    margin: 5px;
    border-radius: 5px;

@@ -54,7 +54,7 @@ const Wrapper = styled.ul`
    align-items: center;
 `;
 const Detail = styled.li`
-   width: 100%;
+  // width: 100%;
    /* border-bottom: solid 1px grey; */
    padding-bottom: 0px;
    list-style-type: none;
