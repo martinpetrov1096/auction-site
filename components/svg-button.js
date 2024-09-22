@@ -52,10 +52,10 @@ const SVG = styled.svg`
    }
    :hover {
       > .stroke {
-         stroke: ${(props) => props.theme.teal};
+         stroke: ${(props) => props.theme.accentColor};
       }
       > .fill {
-         fill: ${(props) => props.theme.teal};
+         fill: ${(props) => props.theme.accentColor};
       }
    }
 `;

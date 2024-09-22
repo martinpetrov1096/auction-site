@@ -49,11 +49,11 @@ const Input = styled.input.attrs({
    :focus {
       outline: none;
       ::placeholder {
-         color: ${({theme}) => theme.teal};
+         color: ${({theme}) => theme.accentColor};
       } 
-      border: 1px solid ${({theme}) => theme.teal};
+      border: 1px solid ${({theme}) => theme.accentColor};
    }
    :hover {
-      border: 1px solid ${({theme}) => theme.teal};
+      border: 1px solid ${({theme}) => theme.accentColor};
    }
 `;

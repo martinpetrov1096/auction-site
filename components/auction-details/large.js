@@ -128,7 +128,7 @@ export default function AuctionDetailsLarge({ auction }) {
 
    return (
       <Wrapper>
-         <MyImageGallery images={auction.images}/>
+         <StyledImageGallery images={auction.images} hideThumbnail={false}/>
          <DetailsWrapper>
             {/* <MakeModel>{auction.vehicleInfo.make + ' ' + auction.vehicleInfo.model}</MakeModel> */}
             
@@ -168,9 +168,11 @@ const Wrapper = styled.div`
    justify-content: space-around;
    align-items: flex-end;
 `;
-const MyImageGallery = styled(ImageGallery)`
+const StyledImageGallery = styled(ImageGallery)`
    flex: 1 1 60%;
    height: min(600px, 100%);
+   padding: min(30px, 5%);
+
 `;
 const DetailsWrapper = styled.div`
    flex: 1 3 30%;

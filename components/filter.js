@@ -92,8 +92,8 @@ const Form = styled.form`
    margin: 20px;
    width: calc(100% - 20px);
    display: flex;
-   flex-flow: column nowrap;
-   justify-content: stretch;
+   flex-flow: row nowrap;
+   justify-content: center;
    align-items: center;
 `;
 const SelectWrapper = styled.div`
@@ -129,6 +129,6 @@ const FilterButton = styled.button.attrs({
    background-color: ${({theme}) => theme.grey};
    transition: background-color .2s ease-in-out;
    :hover {
-      background-color: ${({theme}) => theme.teal};
+      background-color: ${({theme}) => theme.accentColor};
    }
 `;

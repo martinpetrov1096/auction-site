@@ -6,9 +6,10 @@ import SVGButton from '../svg-button';
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
 ////////////////////////////////////////////////////
-export default function ImageGallery({ images, className }) {
+export default function ImageGallery({ images, className, hideThumbnail}) {
 
    const [curImageIdx, setCurImageIdx] = useState(0);
+   const [showBtns, setShowBtns] = useState(false);
    const curImg = useMemo(() => 
       <CurImage src={images[curImageIdx]} alt="Current Image for vehicle"/>
    , [curImageIdx]);
@@ -26,30 +27,46 @@ export default function ImageGallery({ images, className }) {
       )
    , [curImageIdx]);
 
-   useEffect(() => {
-      document.getElementById(images[curImageIdx]).scrollIntoView({block: 'nearest', inline: 'center'});
-   }, [curImageIdx]);
+   const changeImg = (num, e) => {
+      setCurImageIdx(num);
+      e.stopPropagation();
+      e.preventDefault();
+   };
+
+   const onMouseOver = () => {
+      setShowBtns(true);
+   };
+   const onMouseOut = () => {
+      setShowBtns(false);
+   };
+
+   if (!hideThumbnail) {
+      useEffect(() => {
+         document.getElementById(images[curImageIdx]).scrollIntoView({block: 'nearest', inline: 'center'});
+      }, [curImageIdx]);
+   }
+
+   let thumbnail = hideThumbnail ?<></> : <ThumbnailWrapper>{thumbnails}</ThumbnailWrapper>;
 
    return (
       <Wrapper className={className}>
-         <CurImageWrapper>
-            <PrevBtn  onClick={() => setCurImageIdx(modulo((curImageIdx-1), images.length))}>
+         <CurImageWrapper hideThumbnail={hideThumbnail} onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
+            <PrevBtn onClick={(e) => changeImg(modulo((curImageIdx-1), images.length), e)} show={showBtns}>
                <SVGButton width="50" height="50" viewBox="0 0 120 120">
                   <circle cx="60" cy="60" r="60" className="fill"/>
                   <path d="M59.5 47.125L37.7537 70L36 67.75L59.5 43L83 67.75L80.8955 70L59.5 47.125Z" fill="white" strokeWidth="4"/>
                </SVGButton>
             </PrevBtn>
             { curImg }
-            <NextBtn onClick={() => setCurImageIdx(modulo((curImageIdx+1), images.length))}>
+            <NextBtn onClick={(e) => changeImg(modulo((curImageIdx+1), images.length), e)}  show={showBtns}>
                <SVGButton width="50" height="50" viewBox="0 0 120 120">
                   <circle cx="60" cy="60" r="60" className="fill"/>
                   <path d="M59.5 47.125L37.7537 70L36 67.75L59.5 43L83 67.75L80.8955 70L59.5 47.125Z" fill="white" strokeWidth="4"/>
                </SVGButton>
             </NextBtn>
          </CurImageWrapper>
-         <ThumbnailWrapper>
-            {thumbnails}
-         </ThumbnailWrapper>
+         { thumbnail }
+        
       </Wrapper>
    );
 }
@@ -63,14 +80,14 @@ function modulo(a, n) {
 
 ImageGallery.propTypes = {
    images: PropTypes.arrayOf(PropTypes.string),
-   className: PropTypes.string
+   className: PropTypes.string,
+   hideThumbnail: PropTypes.bool
 };
 ////////////////////////////////////////////////////
 //////////////// STYLED COMPONENTS /////////////////
 ////////////////////////////////////////////////////
 const Wrapper = styled.div`
    width: 100%;
-   padding: min(30px, 5%);
    overflow-x: hidden;
    display: flex;
    flex-flow: column nowrap;
@@ -81,7 +98,7 @@ const CurImageWrapper = styled.div`
    width: 100%;
    height: min(600px, 60vw);
    margin: 0;
-   border-radius: 5px;
+   border-radius: 5px 5px ${'0 0'};
    padding: 0;
    display: flex;
    flex-flow: row nowrap;
@@ -99,6 +116,7 @@ const Button = styled.button`
    border-radius: 100%;
    padding: 0;
    opacity: .8;
+   display: ${({show}) => show ? 'block' : 'none'};
    transition: background-color .2s ease-in-out;
    background-color: transparent;
    :focus {
@@ -130,7 +148,7 @@ const Thumbnail = styled.img`
    height: 75px;
    width: 75px;
    margin: 0 5px;
-   border: ${({selected, theme}) => selected ? '2px solid' + theme.teal : 'none'};
+   border: ${({selected, theme}) => selected ? '2px solid' + theme.accentColor : 'none'};
    border-radius: 5px;
    object-fit: cover;
    box-sizing: border-box;

@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import styled from 'styled-components';
 import { auctionProp } from '../../utils/prop-types';
 import DetailsTable from './details-table';
+import ImageGallery from './image-gallery';
 
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
@@ -10,6 +11,7 @@ import DetailsTable from './details-table';
 export default function AuctionDetailsSmall({ auction }) {
    
    const link = useMemo(() => {
+      //return null;
       return '/' + auction.vehicleInfo.make + '/'
          + auction.vehicleInfo.model + '/'
          + auction.id; 
@@ -57,7 +59,7 @@ export default function AuctionDetailsSmall({ auction }) {
       
    return (
       <Wrapper href={link}>
-         <Image src={auction.images[0]} />
+         <StyledImageGallery images={auction.images} hideThumbnail={true}/>
          <MakeModel>{auction.vehicleInfo.make + ' ' + auction.vehicleInfo.model}</MakeModel>
          <DetailsTable details={details}/>
          <MoreDetailsButton>More Details</MoreDetailsButton>
@@ -76,9 +78,9 @@ AuctionDetailsSmall.propTypes = {
 ////////////////////////////////////////////////////
 
 const Wrapper = styled.a`
-   //width: min(300px, 95%);
-   width: 100%;
- 
+  
+
+  
    flex: 0 0 300px;
 
    //padding: 5px;'
@@ -95,7 +97,7 @@ const Wrapper = styled.a`
    */
    :hover { 
       > h3 {
-         background-color: ${({theme}) => theme.teal};
+         background-color: ${({theme}) => theme.accentColor};
       }
    }
    /* Make margins smaller on mobile */
@@ -106,7 +108,7 @@ const Wrapper = styled.a`
    flex-flow: column nowrap;
    align-items: center;
 `;
-const Image = styled.img`
+const StyledImageGallery = styled(ImageGallery)`
    height: 250px;
    width: 100%;
    object-fit: cover;
