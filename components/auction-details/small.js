@@ -48,11 +48,11 @@ export default function AuctionDetailsSmall({ auction }) {
          },
          {
             name: 'Damage',
-            value: auction.primaryDamage
+            value: auction.condition.primaryDamage
          },
          {
             name: 'Mileage',
-            value: auction.mileage
+            value: auction.vehicleInfo.mileage
          }
 
       ], []);
