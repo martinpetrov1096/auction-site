@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import SearchBar from './searchbar';
-import Logo from '../../config/logo.svg';
 ////////////////////////////////////////////////////
 //////////////////// COMPONENT /////////////////////
 ////////////////////////////////////////////////////
@@ -81,7 +80,9 @@ const HomeLink = styled.a.attrs({
 })`
    height: 100%;
 `;
-const StyledLogo = styled(Logo)`
+const StyledLogo = styled.img.attrs({
+   'src': '/assets/logo.jpeg'
+})`
    height: 70px;
    width: auto;
    @media screen and (max-width: 500px) {

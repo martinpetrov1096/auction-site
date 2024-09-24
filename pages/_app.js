@@ -26,7 +26,7 @@ export default function MyApp({ Component, pageProps }) {
    return (
       <>
          <Head>
-            <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+            <link rel="icon" type="image/svg+xml" href="/assets/logo.jpeg"/>
             <meta httpEquiv="content-type" content="text/html; charset=UTF-8"></meta>
          </Head>
          <ThemeProvider theme={theme}>
