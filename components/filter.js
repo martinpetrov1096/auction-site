@@ -67,7 +67,7 @@ export default function filter() {
    return (
       <Form>
          <SelectWrapper>
-            <Label htmlFor="make">Filter By Car Manufacturers</Label>
+            <label htmlFor="make">Manufacturer</label>
             {/* When choosing a new make, reset curModel to be 'any' */}
             <Select name="Make" id="make" value={curMake} onChange={() => {setCurMake(event.target.value); setCurModel('any');}}>
                <option defaultValue>any</option>
@@ -75,13 +75,17 @@ export default function filter() {
             </Select>
          </SelectWrapper>
          <SelectWrapper  hidden={curMake === 'any'}>
-            <Label htmldFor="model">Filter By Car Models</Label>
+            <label htmlFor="model">Model</label>
             <Select name="Model" id="model" value={curModel} onChange={() => setCurModel(event.target.value)}>
                <option defaultValue>any</option>
                {modelElements}
             </Select>
          </SelectWrapper>
-         <FilterButton onClick={(e) => {e.preventDefault(); filter();}}>Filter</FilterButton>
+         <SearchWrapper invisibleLabel={true}>
+            <label htmlFor="model">a</label>
+            <FilterButton onClick={(e) => {e.preventDefault(); filter();}}>Filter</FilterButton>
+
+         </SearchWrapper>
       </Form>
    );
 }
@@ -92,23 +96,29 @@ const Form = styled.form`
    margin: 20px;
    width: calc(100% - 20px);
    display: flex;
-   flex-flow: row nowrap;
+   flex-flow: row wrap;
    justify-content: center;
    align-items: center;
 `;
 const SelectWrapper = styled.div`
-   width: min(400px, 95%);
+   margin: 0 5px;
+   width: min(300px, 95%);
    font-family: ${({theme}) => theme.font};
-   display: ${({hidden}) => hidden ? 'none' : 'flex'};
+   display: flex;
    flex-flow: column nowrap;
    justify-content: stretch;
+   & label {
+      text-align: center;
+      font-size: 12px;
+      color: ${({invisibleLabel}) => invisibleLabel ? 'white' : 'auto'};
+   }
 `;
-const Label = styled.label`
-   text-align: center;
+const SearchWrapper = styled(SelectWrapper)`
+   width: 70px;
 `;
+
 const Select = styled.select`
    height: 40px;
-   margin: 10px 0;
    padding: 10px;
    border-radius: 5px;
    background-color: var(--bgColor);
@@ -119,6 +129,7 @@ const Select = styled.select`
 const FilterButton = styled.button.attrs({
    ariaLabel: 'Filter'
 })`
+   height: 40px;
    border: none;
    border-radius: 5px;
    padding: 10px 20px;

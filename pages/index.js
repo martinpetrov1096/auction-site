@@ -30,6 +30,8 @@ export default function Home() {
 ////////////////////////////////////////////////////
 
 const Title = styled.h1`
+   margin: 0;
+   margin-top: 5px;
    font-size: min(50px, 10vw);
    text-align: center;
    color: ${({theme}) => theme.darkGrey};

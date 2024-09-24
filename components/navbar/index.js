@@ -81,7 +81,7 @@ const HomeLink = styled.a.attrs({
    height: 100%;
 `;
 const StyledLogo = styled.img.attrs({
-   'src': '/assets/logo.jpeg'
+   'src': '/assets/logo.png'
 })`
    height: 70px;
    width: auto;
