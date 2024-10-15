@@ -31,7 +31,7 @@ SVGButton.propTypes = {
 //////////////// STYLED COMPONENTS /////////////////
 ////////////////////////////////////////////////////
 
-const Wrapper = styled.button`
+const Wrapper = styled.div`
    box-shadow: none;
    border: none;
    border-radius: 100%;
